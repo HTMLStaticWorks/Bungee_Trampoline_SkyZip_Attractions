@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyZip & Bungee Trampoline | Premium Adventure</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9', // Electric Blue
+                        purple: '#a855f7', // Neon Purple
+                        charcoal: '#1f2937', // Dark Charcoal
+                        cyan: '#06b6d4', // Cyan Glow
+                        orange: '#f97316', // Orange Highlight
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        sora: ['Sora', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 bg-transparent transition-all duration-300 text-white" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-heading font-extrabold flex items-center gap-2">
+                        <i class="fa-solid fa-rocket text-primary animate-float"></i>
+                        <span>Sky<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple">Zip</span></span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-primary transition font-semibold font-sora">Home</a>
+                    <a href="services.html" class="hover:text-primary transition font-semibold font-sora">Experiences</a>
+                    <a href="pricing.html" class="hover:text-primary transition font-semibold font-sora">Pricing</a>
+                    <a href="service-details.html#safety" class="hover:text-primary transition font-semibold font-sora">Safety</a>
+                    <a href="blog.html" class="hover:text-primary transition font-semibold font-sora">Blog</a>
+                    <a href="about.html" class="hover:text-primary transition font-semibold font-sora">About</a>
+                    <a href="contact.html" class="hover:text-primary transition font-semibold font-sora">Contact</a>
+                    
+                    <button id="theme-toggle" class="hover:text-primary transition text-xl">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <a href="pricing.html" class="bg-gradient-to-r from-primary to-purple hover:from-purple hover:to-primary text-white px-8 py-3 rounded-full font-bold transition btn-glow font-sora shadow-lg shadow-primary/30">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="lg:hidden absolute top-24 left-0 w-full glass bg-charcoal border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50">Home</a>
+                <a href="services.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50">Experiences</a>
+                <a href="pricing.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50">Pricing</a>
+                <a href="about.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50">About</a>
+                <a href="contact.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium">Contact</a>
+                <a href="pricing.html" class="bg-gradient-to-r from-primary to-purple text-white block px-3 py-3 mt-4 rounded-full font-bold text-center shadow-lg">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <!-- Background Image -->
+            <img src="https://images.unsplash.com/photo-1541364406283-0cb2b952c286?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Bungee Jumping" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/60 to-gray-900 dark:to-gray-900"></div>
+        </div>
+        
+        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto reveal">
+            <span class="inline-block py-1 px-3 rounded-full bg-primary/20 border border-primary/50 text-primary font-bold text-sm mb-6 backdrop-blur-md uppercase tracking-wider">Premium Adventure Park</span>
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white mb-6 leading-tight">
+                Defy Gravity.<br>Experience <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple">The Thrill.</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-gray-200 mb-10 font-light max-w-3xl mx-auto">
+                Join the ultimate Bungee Trampoline and SkyZip adventure. Safe, exhilarating, and perfect for all ages.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="pricing.html" class="bg-gradient-to-r from-primary to-cyan text-white px-10 py-4 rounded-full font-bold text-lg hover-zoom btn-glow shadow-xl shadow-primary/30 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-ticket"></i> Book Your Slot
+                </a>
+                <a href="#video-tour" class="glass text-white px-10 py-4 rounded-full font-bold text-lg hover-zoom flex items-center justify-center gap-2 hover:bg-white/20 transition">
+                    <i class="fa-solid fa-play"></i> Watch Video
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce z-10">
+            <a href="#highlights" class="text-white/70 hover:text-white transition">
+                <i class="fa-solid fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Attraction Highlights -->
+    <section id="highlights" class="py-24 bg-white dark:bg-gray-900 relative">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10 mt-10"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple/10 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Our Signature <span class="text-gradient">Attractions</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Experience adrenaline-pumping activities engineered for maximum safety and unforgettable memories.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Highlight 1 -->
+                <div class="rounded-3xl overflow-hidden glass hover-zoom group cursor-pointer border border-gray-200 dark:border-gray-800 shadow-xl reveal">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596484552834-6a58f850d0a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Bungee Trampoline" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3 inline-block">Most Popular</span>
+                            <h3 class="text-3xl font-heading font-bold text-white mb-2">Bungee Trampoline</h3>
+                            <p class="text-gray-300">Leap up to 25 feet in the air and perform flips with total safety.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Highlight 2 -->
+                <div class="rounded-3xl overflow-hidden glass hover-zoom group cursor-pointer border border-gray-200 dark:border-gray-800 shadow-xl reveal" style="transition-delay: 100ms;">
+                    <div class="relative h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="SkyZip Adventure" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
+                        <div class="absolute bottom-0 left-0 p-8 w-full">
+                            <span class="bg-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-3 inline-block">Extreme</span>
+                            <h3 class="text-3xl font-heading font-bold text-white mb-2">SkyZip Line</h3>
+                            <p class="text-gray-300">Soar through the air across our scenic park at breathtaking speeds.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Pricing & Timed Slots -->
+    <section class="py-24 bg-gray-50 dark:bg-charcoal relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Simple <span class="text-gradient">Pricing</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Book timed slots in advance to skip the queue and guarantee your flight.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pricing Card 1 -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transition-transform duration-300 reveal">
+                    <h3 class="text-xl font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">Single Jump</h3>
+                    <div class="text-5xl font-heading font-extrabold mb-6 dark:text-white">$25<span class="text-lg text-gray-500 font-medium">/15 min</span></div>
+                    <ul class="space-y-4 mb-8 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> 15 Min Bungee Trampoline</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> Safety harness fitting</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> Professional guidance</li>
+                    </ul>
+                    <a href="pricing.html" class="w-full block text-center py-3 px-6 rounded-xl font-bold bg-gray-100 dark:bg-gray-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition text-gray-900 dark:text-white">Book Slot</a>
+                </div>
+                
+                <!-- Pricing Card 2 (Popular) -->
+                <div class="bg-gradient-to-b from-gray-900 to-charcoal dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 shadow-2xl shadow-primary/20 border border-primary/30 relative hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 100ms;">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-primary to-purple text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">Most Popular</div>
+                    <h3 class="text-xl font-bold text-gray-300 uppercase tracking-wider mb-2">Combo Pass</h3>
+                    <div class="text-5xl font-heading font-extrabold mb-6 text-white">$45<span class="text-lg text-gray-400 font-medium">/person</span></div>
+                    <ul class="space-y-4 mb-8 text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-cyan"></i> 20 Min Bungee Trampoline</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-cyan"></i> 1 SkyZip Ride</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-cyan"></i> Priority queue access</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-cyan"></i> Digital photo included</li>
+                    </ul>
+                    <a href="pricing.html" class="w-full block text-center py-3 px-6 rounded-xl font-bold bg-gradient-to-r from-primary to-purple text-white hover:shadow-lg hover:shadow-primary/50 transition btn-glow">Book Slot</a>
+                </div>
+                
+                <!-- Pricing Card 3 -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transition-transform duration-300 reveal" style="transition-delay: 200ms;">
+                    <h3 class="text-xl font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2">SkyZip Only</h3>
+                    <div class="text-5xl font-heading font-extrabold mb-6 dark:text-white">$30<span class="text-lg text-gray-500 font-medium">/ride</span></div>
+                    <ul class="space-y-4 mb-8 text-gray-600 dark:text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-purple"></i> 1 Full SkyZip Ride</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-purple"></i> Safety gear included</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-purple"></i> Scenic views</li>
+                    </ul>
+                    <a href="pricing.html" class="w-full block text-center py-3 px-6 rounded-xl font-bold bg-gray-100 dark:bg-gray-700 hover:bg-purple hover:text-white dark:hover:bg-purple transition text-gray-900 dark:text-white">Book Slot</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Safety & Waiver Information -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 reveal">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1629838965074-672522c0b852?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Safety First" class="rounded-3xl shadow-2xl z-10 relative">
+                        <div class="absolute -bottom-10 -right-10 bg-white dark:bg-charcoal p-6 rounded-2xl shadow-xl z-20 border border-gray-100 dark:border-gray-800">
+                            <div class="flex items-center gap-4">
+                                <div class="w-16 h-16 bg-green-100 dark:bg-green-900/30 text-green-500 rounded-full flex items-center justify-center text-3xl">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-xl dark:text-white">100% Secure</h4>
+                                    <p class="text-sm text-gray-500 dark:text-gray-400">Certified Equipment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 reveal">
+                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Safety Guarantee</span>
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6 dark:text-white">Your Safety is Our <span class="text-gradient">Top Priority</span></h2>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg mb-8">
+                        We use state-of-the-art dual-redundant harness systems and thoroughly inspect all equipment daily. Before any jump or zip, our certified instructors guide you through a quick safety briefing.
+                    </p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-weight-scale"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold dark:text-white">Weight Restrictions</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Min 40 lbs / Max 220 lbs for Bungee. Max 250 lbs for SkyZip.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-purple/10 text-purple flex items-center justify-center text-xl">
+                                <i class="fa-solid fa-file-signature"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold dark:text-white">Digital Waiver</h4>
+                                <p class="text-gray-600 dark:text-gray-400 mt-1">Save time by signing your safety waiver online before you arrive.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="inline-flex items-center gap-2 bg-charcoal dark:bg-gray-800 text-white px-8 py-3 rounded-full font-bold hover:bg-primary transition shadow-lg">
+                        Sign Online Waiver <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Birthday/Event Packages -->
+    <section class="py-24 bg-gradient-to-br from-charcoal to-gray-900 text-white relative">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-24 -right-24 w-96 h-96 bg-orange/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-gray-900 to-transparent"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-orange font-bold tracking-wider uppercase text-sm mb-2 block">Group Events</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Celebrate With <span class="text-orange">Adrenaline</span></h2>
+                <p class="text-gray-300 max-w-2xl mx-auto text-lg">Perfect for birthdays, corporate team building, and family reunions.</p>
+            </div>
+            
+            <div class="glass rounded-3xl p-2 md:p-8 border border-white/10 flex flex-col md:flex-row gap-8 items-center reveal">
+                <div class="w-full md:w-1/2 rounded-2xl overflow-hidden h-64 md:h-96">
+                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Birthday Party" class="w-full h-full object-cover">
+                </div>
+                <div class="w-full md:w-1/2 p-6">
+                    <h3 class="text-3xl font-heading font-bold mb-4">Ultimate Birthday Package</h3>
+                    <div class="text-4xl font-extrabold text-orange mb-6">$299<span class="text-xl text-gray-400 font-medium">/up to 10 kids</span></div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-star text-orange"></i> 2 Hours private park access</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-star text-orange"></i> Dedicated safety instructor</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-star text-orange"></i> Party tent and table setup</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-star text-orange"></i> Free jump pass for the birthday child</li>
+                    </ul>
+                    <a href="contact.html" class="bg-orange hover:bg-orange/80 text-white px-8 py-3 rounded-full font-bold transition inline-block btn-glow">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonials & Footer -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Thrill Seeker <span class="text-gradient">Reviews</span></h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-20">
+                <!-- Testimonial 1 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 reveal">
+                    <div class="text-yellow-400 text-xl mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">"My kids had the absolute best time on the Bungee Trampoline! The staff was incredibly focused on safety which put my mind at ease. We'll be back!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center font-bold text-xl dark:text-white">SM</div>
+                        <div>
+                            <h5 class="font-bold dark:text-white">Sarah Miller</h5>
+                            <p class="text-sm text-gray-500">Local Guide</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 reveal" style="transition-delay: 100ms;">
+                    <div class="text-yellow-400 text-xl mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">"The SkyZip was exhilarating! The online booking system made it so easy to secure our spot without waiting in long lines. A premium experience."</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-primary/20 text-primary flex items-center justify-center font-bold text-xl">JD</div>
+                        <div>
+                            <h5 class="font-bold dark:text-white">James Davis</h5>
+                            <p class="text-sm text-gray-500">Thrill Seeker</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg border border-gray-100 dark:border-gray-700 reveal" style="transition-delay: 200ms;">
+                    <div class="text-yellow-400 text-xl mb-4">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">"We hosted my daughter's 10th birthday here. The team handled everything flawlessly. Best birthday party ever according to the kids!"</p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-full bg-purple/20 text-purple flex items-center justify-center font-bold text-xl">AW</div>
+                        <div>
+                            <h5 class="font-bold dark:text-white">Amanda Wilson</h5>
+                            <p class="text-sm text-gray-500">Event Booker</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="text-3xl font-heading font-extrabold flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-rocket text-primary"></i>
+                        <span>Sky<span class="text-primary">Zip</span></span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Premium adrenaline experiences for all ages. Defy gravity safely with our state-of-the-art Bungee Trampolines and SkyZip lines.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-heading">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html" class="hover:text-primary transition">Experiences</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary transition">Pricing & Booking</a></li>
+                        <li><a href="pricing.html#birthday" class="hover:text-primary transition">Birthday Packages</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Information -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-heading">Information</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="service-details.html#safety" class="hover:text-primary transition">Safety Certifications</a></li>
+                        <li><a href="#" class="hover:text-primary transition">Sign Digital Waiver</a></li>
+                        <li><a href="services.html#faq" class="hover:text-primary transition">FAQ</a></li>
+                        <li><a href="blog.html" class="hover:text-primary transition">Blog & News</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 font-heading">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for special offers and event updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-primary w-full border border-gray-700">
+                        <button type="submit" class="bg-primary hover:bg-cyan px-4 py-2 rounded-r-md transition text-white font-bold"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+                <p>&copy; 2026 SkyZip & Bungee Trampoline Attractions. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Booking Button -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full p-4 glass bg-charcoal/90 z-40 border-t border-gray-800">
+        <a href="pricing.html" class="w-full bg-gradient-to-r from-primary to-purple text-white py-3 rounded-full font-bold text-center block shadow-lg btn-glow">Book Your Adventure Now</a>
+    </div>
+
+    <!-- Script to pad body for sticky button on mobile -->
+    <script>
+        // Add padding to body on mobile so content isn't hidden behind the sticky button
+        if (window.innerWidth < 768) {
+            document.body.style.paddingBottom = '80px';
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

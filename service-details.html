@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Details | SkyZip & Bungee Trampoline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0ea5e9', purple: '#a855f7', charcoal: '#1f2937' }, fontFamily: { sans: ['Inter'], heading: ['Poppins'] } } } }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 pt-24">
+
+    <!-- Navbar Area -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-charcoal/95 backdrop-blur-md shadow-lg transition-all text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-heading font-extrabold flex items-center gap-2">
+                <i class="fa-solid fa-rocket text-primary"></i> <span>Sky<span class="text-primary">Zip</span></span>
+            </a>
+            <div class="hidden lg:flex space-x-8">
+                <a href="index.html" class="hover:text-primary transition font-semibold">Home</a>
+                <a href="services.html" class="text-primary transition font-semibold">Experiences</a>
+                <a href="pricing.html" class="bg-primary text-white px-8 py-3 rounded-full font-bold btn-glow">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Attraction Overview -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1596484552834-6a58f850d0a1?w=1000&q=80" alt="Bungee Trampoline" class="w-full">
+                </div>
+                <div>
+                    <span class="text-primary font-bold uppercase tracking-wider mb-2 block">Attraction</span>
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6 dark:text-white">Bungee Trampoline Experience</h1>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg mb-6 leading-relaxed">
+                        Defy gravity safely with our premium Bungee Trampoline system. Harness in, jump on the trampoline, and the bungee cords will elevate you up to 25 feet in the air. 
+                    </p>
+                    <ul class="space-y-4 mb-8 text-gray-700 dark:text-gray-300">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Zero experience required</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Perform front & back flips safely</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-primary"></i> Professional instructor guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Booking & Pricing Table -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl">
+                <h2 class="text-3xl font-heading font-bold mb-8 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-4">Available Packages</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                        <div>
+                            <h4 class="font-bold text-xl dark:text-white">Single Session</h4>
+                            <p class="text-gray-500">15 Minutes</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-primary">$25</div>
+                            <a href="pricing.html" class="text-sm font-bold underline hover:text-gray-900 dark:hover:text-white transition">Book Slot</a>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-6 bg-primary/10 rounded-2xl border border-primary/30">
+                        <div>
+                            <h4 class="font-bold text-xl dark:text-white">Combo Day Pass <span class="bg-primary text-white text-xs px-2 py-1 rounded ml-2">Popular</span></h4>
+                            <p class="text-gray-500">20 Mins Bungee + 1 SkyZip</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-primary">$45</div>
+                            <a href="pricing.html" class="bg-primary text-white text-sm font-bold px-4 py-2 rounded-full mt-2 inline-block">Book Slot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Safety Instructions -->
+    <section class="py-20 bg-charcoal text-white" id="safety">
+        <div class="max-w-5xl mx-auto px-4 text-center">
+            <h2 class="text-4xl font-heading font-bold mb-12">Mandatory <span class="text-primary">Safety Instructions</span></h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-gray-800 rounded-2xl border border-gray-700">
+                    <i class="fa-solid fa-shirt text-4xl text-primary mb-4"></i>
+                    <h4 class="font-bold text-xl mb-2">Proper Attire</h4>
+                    <p class="text-gray-400">Wear closed-toe shoes and comfortable activewear. No skirts or dresses.</p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-2xl border border-gray-700">
+                    <i class="fa-solid fa-hand-holding-medical text-4xl text-purple mb-4"></i>
+                    <h4 class="font-bold text-xl mb-2">Health Notice</h4>
+                    <p class="text-gray-400">Not suitable for pregnant women or those with recent back/neck injuries.</p>
+                </div>
+                <div class="p-6 bg-gray-800 rounded-2xl border border-gray-700">
+                    <i class="fa-solid fa-file-signature text-4xl text-cyan mb-4"></i>
+                    <h4 class="font-bold text-xl mb-2">Sign Waiver</h4>
+                    <p class="text-gray-400">All participants must have a signed digital waiver before entering.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Customer Reviews -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-heading font-bold mb-10 text-center dark:text-white">Recent Reviews</h2>
+            <div class="space-y-6">
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"The instructors made sure my harness was secure. I felt safe the whole time. Doing flips was incredible!"</p>
+                    <h5 class="font-bold dark:text-white">- Jessica W.</h5>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-charcoal text-white py-8 border-t border-gray-800 text-center">
+        <p>&copy; 2026 SkyZip. All rights reserved.</p>
+    </footer>
+</body>
+</html>

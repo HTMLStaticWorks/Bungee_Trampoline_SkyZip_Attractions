@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyZip & Bungee | Adventure Landing</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        purple: '#a855f7',
+                        charcoal: '#1f2937',
+                        cyan: '#06b6d4',
+                        orange: '#f97316',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        sora: ['Sora', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 bg-transparent transition-all duration-300 text-white" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="index.html" class="text-3xl font-heading font-extrabold flex items-center gap-2">
+                        <i class="fa-solid fa-rocket text-primary animate-float"></i>
+                        <span>Sky<span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple">Zip</span></span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-primary transition font-semibold font-sora">Home</a>
+                    <a href="services.html" class="hover:text-primary transition font-semibold font-sora">Experiences</a>
+                    <a href="pricing.html" class="hover:text-primary transition font-semibold font-sora">Pricing</a>
+                    <a href="service-details.html#safety" class="hover:text-primary transition font-semibold font-sora">Safety</a>
+                    <a href="blog.html" class="hover:text-primary transition font-semibold font-sora">Blog</a>
+                    <a href="about.html" class="hover:text-primary transition font-semibold font-sora">About</a>
+                    <a href="contact.html" class="hover:text-primary transition font-semibold font-sora">Contact</a>
+                    
+                    <button id="theme-toggle" class="hover:text-primary transition text-xl">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                    
+                    <a href="pricing.html" class="bg-gradient-to-r from-primary to-purple hover:from-purple hover:to-primary text-white px-8 py-3 rounded-full font-bold transition btn-glow font-sora shadow-lg shadow-primary/30">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="lg:hidden absolute top-24 left-0 w-full glass bg-charcoal border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50">Home</a>
+                <a href="services.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50">Experiences</a>
+                <a href="pricing.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50">Pricing</a>
+                <a href="about.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50">About</a>
+                <a href="contact.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium">Contact</a>
+                <a href="pricing.html" class="bg-gradient-to-r from-primary to-purple text-white block px-3 py-3 mt-4 rounded-full font-bold text-center shadow-lg">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Fullscreen Video Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-charcoal">
+        <div class="absolute inset-0 z-0">
+            <!-- Simulated Video Background using an image for now, replace with actual video -->
+            <img src="https://images.unsplash.com/photo-1533550604113-58eb07c570b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Video Background" class="w-full h-full object-cover opacity-60 mix-blend-overlay">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4 flex flex-col items-center text-center reveal">
+            <div class="w-20 h-20 bg-primary/20 backdrop-blur-md rounded-full flex items-center justify-center mb-8 border border-primary/50 animate-pulse cursor-pointer hover:scale-110 transition">
+                <i class="fa-solid fa-play text-3xl text-white ml-2"></i>
+            </div>
+            <h1 class="text-5xl md:text-8xl font-heading font-extrabold text-white mb-4 uppercase tracking-tighter">
+                Feel The <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan to-primary">Rush</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-10 max-w-2xl font-light">The city's #1 destination for extreme gravity-defying adventures.</p>
+            <a href="services.html" class="group relative px-8 py-4 font-bold text-white rounded-full overflow-hidden bg-gray-800 border border-gray-700 hover:border-primary transition">
+                <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-primary group-hover:opacity-100 transition duration-500 ease-in-out"></span>
+                <span class="relative flex items-center gap-3">Explore Experiences <i class="fa-solid fa-arrow-right group-hover:translate-x-2 transition"></i></span>
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. SkyZip + Bungee Experience Showcase -->
+    <section class="py-24 bg-gray-900 text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <!-- Interactive Cards -->
+                <div class="w-full lg:w-1/2 space-y-6 reveal">
+                    <div class="glass p-6 rounded-3xl border border-primary/30 hover:border-primary transition cursor-pointer group flex items-center gap-6">
+                        <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1596484552834-6a58f850d0a1?auto=format&fit=crop&w=300&q=80" alt="Bungee" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading mb-2 group-hover:text-primary transition">Bungee Trampoline</h3>
+                            <p class="text-gray-400">Multiple flips and 25ft jumps with expert safety harnessing.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="glass p-6 rounded-3xl border border-purple/30 hover:border-purple transition cursor-pointer group flex items-center gap-6">
+                        <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
+                            <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?auto=format&fit=crop&w=300&q=80" alt="SkyZip" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold font-heading mb-2 group-hover:text-purple transition">SkyZip Line</h3>
+                            <p class="text-gray-400">High-speed panoramic views across our adventure park.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="w-full lg:w-1/2 reveal">
+                    <h2 class="text-4xl md:text-5xl font-heading font-bold mb-6">Master <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan">Gravity</span></h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                        Our experiences are designed to push your boundaries while keeping you 100% secure. Whether you're soaring down the SkyZip or practicing aerial acrobatics on the Bungee Trampoline, you're in the hands of certified professionals.
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="bg-gray-800 rounded-2xl p-4 text-center w-1/2 border border-gray-700">
+                            <div class="text-3xl font-bold text-primary mb-1">5+</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider">Ages</div>
+                        </div>
+                        <div class="bg-gray-800 rounded-2xl p-4 text-center w-1/2 border border-gray-700">
+                            <div class="text-3xl font-bold text-purple mb-1">Zero</div>
+                            <div class="text-sm text-gray-400 uppercase tracking-wider">Experience Needed</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Weight Limit Calculator -->
+    <section class="py-20 bg-gray-50 dark:bg-charcoal relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100 dark:border-gray-700 reveal relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full"></div>
+                
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl font-heading font-bold dark:text-white mb-2">Check Your Eligibility</h2>
+                    <p class="text-gray-500 dark:text-gray-400">Enter your details to see which attractions you can ride safely.</p>
+                </div>
+                
+                <div x-data="{ weight: 120, height: 160, unit: 'lbs' }">
+                    <div class="flex justify-center gap-4 mb-8">
+                        <button @click="unit = 'lbs'" :class="unit === 'lbs' ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300'" class="px-6 py-2 rounded-full font-bold transition">LBS / IN</button>
+                        <button @click="unit = 'kg'" :class="unit === 'kg' ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300'" class="px-6 py-2 rounded-full font-bold transition">KG / CM</button>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8 mb-10">
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Your Weight (<span x-text="unit"></span>)</label>
+                            <input type="number" x-model="weight" class="w-full bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary dark:text-white">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Your Height (<span x-text="unit === 'lbs' ? 'in' : 'cm'"></span>)</label>
+                            <input type="number" x-model="height" class="w-full bg-gray-100 dark:bg-gray-900 border border-gray-300 dark:border-gray-700 rounded-xl px-4 py-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary dark:text-white">
+                        </div>
+                    </div>
+                    
+                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl">
+                        <h4 class="font-bold text-lg mb-4 dark:text-white">Available Attractions for You:</h4>
+                        
+                        <!-- Logic for display -->
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+                                <div class="flex items-center gap-3 text-green-700 dark:text-green-400">
+                                    <i class="fa-solid fa-check-circle text-xl"></i>
+                                    <span class="font-bold">Bungee Trampoline</span>
+                                </div>
+                                <span class="text-xs text-green-600 bg-green-100 dark:bg-green-800 dark:text-green-200 px-2 py-1 rounded">Approved</span>
+                            </div>
+                            
+                            <div class="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
+                                <div class="flex items-center gap-3 text-green-700 dark:text-green-400">
+                                    <i class="fa-solid fa-check-circle text-xl"></i>
+                                    <span class="font-bold">SkyZip Line</span>
+                                </div>
+                                <span class="text-xs text-green-600 bg-green-100 dark:bg-green-800 dark:text-green-200 px-2 py-1 rounded">Approved</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Adventure Statistics Counter -->
+    <section class="py-20 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div class="reveal">
+                    <div class="text-5xl font-heading font-extrabold mb-2"><span class="counter-value" data-target="15000">0</span>+</div>
+                    <div class="text-white/80 font-medium uppercase tracking-wider text-sm">Happy Jumpers</div>
+                </div>
+                <div class="reveal" style="transition-delay: 100ms;">
+                    <div class="text-5xl font-heading font-extrabold mb-2"><span class="counter-value" data-target="100">0</span>%</div>
+                    <div class="text-white/80 font-medium uppercase tracking-wider text-sm">Safety Record</div>
+                </div>
+                <div class="reveal" style="transition-delay: 200ms;">
+                    <div class="text-5xl font-heading font-extrabold mb-2"><span class="counter-value" data-target="25">0</span>ft</div>
+                    <div class="text-white/80 font-medium uppercase tracking-wider text-sm">Max Height</div>
+                </div>
+                <div class="reveal" style="transition-delay: 300ms;">
+                    <div class="text-5xl font-heading font-extrabold mb-2"><span class="counter-value" data-target="4.9">0</span></div>
+                    <div class="text-white/80 font-medium uppercase tracking-wider text-sm">Star Rating</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Safety Training Video Area -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="mb-12 reveal">
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Watch Before You <span class="text-gradient">Fly</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Watch our mandatory safety briefing video to ensure you're ready for the action.</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative group cursor-pointer reveal bg-charcoal">
+                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Safety Briefing" class="w-full h-auto opacity-70 group-hover:scale-105 transition duration-700">
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="w-24 h-24 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border-2 border-white group-hover:bg-primary/80 transition duration-300">
+                        <i class="fa-solid fa-play text-4xl text-white ml-2"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Booking CTA + Contact Strip -->
+    <section class="bg-gray-900">
+        <!-- CTA area -->
+        <div class="py-20 bg-gradient-to-r from-primary to-purple relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-30"></div>
+            <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
+                <h2 class="text-4xl md:text-6xl font-heading font-extrabold text-white mb-6">Ready to Take the Leap?</h2>
+                <p class="text-xl text-white/90 mb-10">Secure your timed slot today and skip the lines.</p>
+                <a href="pricing.html" class="bg-white text-gray-900 px-10 py-4 rounded-full font-bold text-xl hover:bg-gray-100 hover:shadow-2xl hover:scale-105 transition duration-300 inline-block shadow-xl">Book Your Slot Now</a>
+            </div>
+        </div>
+        
+        <!-- Contact Strip -->
+        <div class="border-t border-gray-800 bg-charcoal text-gray-400 py-6">
+            <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-phone text-primary"></i>
+                    <span class="font-bold text-white">+1 (555) 123-4567</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-primary"></i>
+                    <span>123 Adventure Park Way, Cityville, ST 12345</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-envelope text-primary"></i>
+                    <a href="mailto:hello@skyzip.com" class="hover:text-white transition">hello@skyzip.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | SkyZip & Bungee Trampoline</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0ea5e9', purple: '#a855f7', charcoal: '#1f2937' }, fontFamily: { sans: ['Inter'], heading: ['Poppins'] } } } }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 pt-24">
+
+    <!-- Navbar Area -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-charcoal/95 backdrop-blur-md shadow-lg transition-all text-white" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="text-3xl font-heading font-extrabold flex items-center gap-2">
+                    <i class="fa-solid fa-rocket text-primary"></i> <span>Sky<span class="text-primary">Zip</span></span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-primary transition font-semibold">Home</a>
+                    <a href="services.html" class="text-primary transition font-semibold">Experiences</a>
+                    <a href="pricing.html" class="hover:text-primary transition font-semibold">Pricing</a>
+                    <a href="about.html" class="hover:text-primary transition font-semibold">About</a>
+                    <a href="pricing.html" class="bg-primary text-white px-8 py-3 rounded-full font-bold btn-glow">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Service Hero Banner -->
+    <section class="py-24 bg-gradient-to-r from-gray-900 to-charcoal text-white text-center">
+        <div class="max-w-4xl mx-auto px-4 reveal">
+            <h1 class="text-5xl md:text-6xl font-heading font-extrabold mb-6">Our <span class="text-primary">Attractions</span></h1>
+            <p class="text-xl text-gray-400">Discover heart-pounding adventures designed for all thrill levels.</p>
+        </div>
+    </section>
+
+    <!-- 2. Attraction Grid -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Service 1 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl reveal border border-gray-200 dark:border-gray-700">
+                    <img src="https://images.unsplash.com/photo-1596484552834-6a58f850d0a1?w=800&q=80" alt="Bungee" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-heading font-bold mb-4 dark:text-white">Bungee Trampoline</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Experience the sensation of zero gravity! Safe for kids and adults, perform flips up to 25 feet in the air.</p>
+                        <a href="service-details.html" class="text-primary font-bold hover:text-purple transition inline-flex items-center gap-2">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl reveal border border-gray-200 dark:border-gray-700">
+                    <img src="https://images.unsplash.com/photo-1544928147-79a2dbc1f389?w=800&q=80" alt="SkyZip" class="w-full h-64 object-cover">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-heading font-bold mb-4 dark:text-white">SkyZip Line</h3>
+                        <p class="text-gray-600 dark:text-gray-400 mb-6">Soar horizontally over the park. High speeds, stunning views, and an adrenaline rush like no other.</p>
+                        <a href="service-details.html" class="text-purple font-bold hover:text-primary transition inline-flex items-center gap-2">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Pricing Comparison -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800 relative">
+        <div class="max-w-5xl mx-auto px-4 text-center reveal">
+            <h2 class="text-4xl font-heading font-bold mb-12 dark:text-white">Quick <span class="text-primary">Pricing</span></h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg">
+                    <thead class="bg-charcoal text-white">
+                        <tr>
+                            <th class="p-6 text-lg">Feature</th>
+                            <th class="p-6 text-lg text-center">Bungee Only</th>
+                            <th class="p-6 text-lg text-center bg-primary/20">Combo Pass</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700 dark:text-gray-300">
+                        <tr class="border-b border-gray-100 dark:border-gray-800">
+                            <td class="p-6 font-medium">Bungee Duration</td>
+                            <td class="p-6 text-center">15 Mins</td>
+                            <td class="p-6 text-center bg-primary/5">20 Mins</td>
+                        </tr>
+                        <tr class="border-b border-gray-100 dark:border-gray-800">
+                            <td class="p-6 font-medium">SkyZip Rides</td>
+                            <td class="p-6 text-center text-gray-400"><i class="fa-solid fa-xmark"></i></td>
+                            <td class="p-6 text-center bg-primary/5 text-primary"><i class="fa-solid fa-check"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 font-medium">Price</td>
+                            <td class="p-6 text-center font-bold text-xl">$25</td>
+                            <td class="p-6 text-center font-bold text-xl bg-primary/5 text-primary">$45</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. FAQ Section -->
+    <section class="py-20 bg-white dark:bg-gray-900" id="faq">
+        <div class="max-w-3xl mx-auto px-4" x-data="{ active: null }">
+            <h2 class="text-4xl font-heading font-bold mb-10 text-center dark:text-white">Frequently Asked <span class="text-primary">Questions</span></h2>
+            
+            <div class="space-y-4">
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 1 ? null : 1" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        What is the weight limit?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 1 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 1" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900">
+                        For the Bungee Trampoline, the weight limit is between 40 lbs and 220 lbs. For the SkyZip line, the maximum weight limit is 250 lbs.
+                    </div>
+                </div>
+                
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 2 ? null : 2" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        Do I need to sign a waiver?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 2 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 2" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900">
+                        Yes, all participants must have a signed waiver. Minors require a signature from a parent or legal guardian. You can sign this online before arriving.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-8 border-t border-gray-800 text-center">
+        <p>&copy; 2026 SkyZip. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

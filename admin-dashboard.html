@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | SkyZip</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0ea5e9', sidebar: '#1e293b' }, fontFamily: { sans: ['Inter'] } } } }
+    </script>
+</head>
+<body class="font-sans antialiased bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-sidebar text-white hidden md:flex flex-col h-full">
+        <div class="h-20 flex items-center px-6 border-b border-gray-700">
+            <span class="text-2xl font-bold"><i class="fa-solid fa-rocket text-primary mr-2"></i>SkyZip Admin</span>
+        </div>
+        <div class="flex-1 overflow-y-auto py-4">
+            <nav class="space-y-1 px-3">
+                <a href="#" class="bg-primary/20 text-primary px-3 py-3 rounded-lg font-medium flex items-center"><i class="fa-solid fa-chart-line w-6"></i> Dashboard</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-3 rounded-lg font-medium flex items-center"><i class="fa-solid fa-users w-6"></i> Users & Orders</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-3 rounded-lg font-medium flex items-center"><i class="fa-solid fa-calendar-check w-6"></i> Bookings</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-3 rounded-lg font-medium flex items-center"><i class="fa-solid fa-envelope w-6"></i> Messages</a>
+            </nav>
+        </div>
+        <div class="p-4 border-t border-gray-700">
+            <a href="index.html" class="flex items-center text-gray-400 hover:text-white"><i class="fa-solid fa-arrow-right-from-bracket mr-2"></i> Logout</a>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 flex flex-col h-full overflow-hidden">
+        <!-- Topbar -->
+        <header class="h-20 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 flex items-center justify-between px-6">
+            <h1 class="text-xl font-bold dark:text-white">Dashboard Overview</h1>
+            <div class="flex items-center gap-4">
+                <button class="text-gray-500 hover:text-primary"><i class="fa-solid fa-bell text-xl"></i></button>
+                <div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-bold">A</div>
+            </div>
+        </header>
+
+        <!-- Content Area -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+            
+            <!-- 1. Analytics Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Total Revenue</div>
+                    <div class="text-3xl font-bold dark:text-white">$12,450</div>
+                    <div class="text-green-500 text-sm mt-2"><i class="fa-solid fa-arrow-up mr-1"></i> +14% from last week</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Active Bookings</div>
+                    <div class="text-3xl font-bold dark:text-white">142</div>
+                    <div class="text-green-500 text-sm mt-2"><i class="fa-solid fa-arrow-up mr-1"></i> +5% from last week</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="text-gray-500 text-sm font-medium mb-1">New Users</div>
+                    <div class="text-3xl font-bold dark:text-white">89</div>
+                    <div class="text-red-500 text-sm mt-2"><i class="fa-solid fa-arrow-down mr-1"></i> -2% from last week</div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+                    <div class="text-gray-500 text-sm font-medium mb-1">Waivers Signed</div>
+                    <div class="text-3xl font-bold dark:text-white">356</div>
+                    <div class="text-gray-500 text-sm mt-2">This month</div>
+                </div>
+            </div>
+
+            <div class="grid lg:grid-cols-3 gap-6">
+                <!-- 2. Users & Orders (Recent) -->
+                <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+                    <h3 class="font-bold text-lg mb-4 dark:text-white">Recent Orders</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left">
+                            <thead class="text-gray-500 border-b border-gray-200 dark:border-gray-700">
+                                <tr>
+                                    <th class="pb-3 font-medium">Order ID</th>
+                                    <th class="pb-3 font-medium">Customer</th>
+                                    <th class="pb-3 font-medium">Package</th>
+                                    <th class="pb-3 font-medium">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-700 text-sm">
+                                <tr>
+                                    <td class="py-4 font-medium dark:text-white">#ORD-001</td>
+                                    <td class="py-4 text-gray-600 dark:text-gray-300">John Smith</td>
+                                    <td class="py-4 text-gray-600 dark:text-gray-300">Combo Pass x2</td>
+                                    <td class="py-4"><span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs">Paid</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="py-4 font-medium dark:text-white">#ORD-002</td>
+                                    <td class="py-4 text-gray-600 dark:text-gray-300">Sarah Jenkins</td>
+                                    <td class="py-4 text-gray-600 dark:text-gray-300">Birthday Package</td>
+                                    <td class="py-4"><span class="bg-yellow-100 text-yellow-700 px-2 py-1 rounded text-xs">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- 3. Booking Management & 4. Messages -->
+                <div class="space-y-6">
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+                        <h3 class="font-bold text-lg mb-4 dark:text-white">Today's Schedule</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded bg-primary/10 text-primary flex items-center justify-center font-bold">10a</div>
+                                    <div>
+                                        <p class="font-medium text-sm dark:text-white">Bungee Slot</p>
+                                        <p class="text-xs text-gray-500">4 People</p>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:underline text-sm">Manage</button>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 rounded bg-purple-100 text-purple-600 flex items-center justify-center font-bold">11a</div>
+                                    <div>
+                                        <p class="font-medium text-sm dark:text-white">SkyZip Run</p>
+                                        <p class="text-xs text-gray-500">2 People</p>
+                                    </div>
+                                </div>
+                                <button class="text-primary hover:underline text-sm">Manage</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700 p-6">
+                        <h3 class="font-bold text-lg mb-4 dark:text-white">Recent Messages</h3>
+                        <div class="text-sm text-gray-600 dark:text-gray-400">
+                            <p class="mb-2"><strong class="dark:text-white">Mike T:</strong> Do you offer corporate discounts?</p>
+                            <p><strong class="dark:text-white">Anna L:</strong> I need to reschedule my 3pm jump.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>

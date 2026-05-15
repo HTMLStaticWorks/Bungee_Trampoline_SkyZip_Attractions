@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon | SkyZip</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0ea5e9' }, fontFamily: { sans: ['Inter'], heading: ['Poppins'] } } } }
+    </script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased text-white bg-gray-900 h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden">
+
+    <div class="absolute inset-0 opacity-20">
+        <img src="https://images.unsplash.com/photo-1541364406283-0cb2b952c286?w=2000&q=80" alt="Background" class="w-full h-full object-cover">
+    </div>
+
+    <div class="relative z-10 max-w-3xl mx-auto text-center w-full">
+        <div class="text-primary mb-8 animate-bounce">
+            <i class="fa-solid fa-rocket text-5xl"></i>
+        </div>
+        
+        <!-- 2. Announcement Message -->
+        <h1 class="text-4xl md:text-6xl font-heading font-extrabold mb-6">Something <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">Thrilling</span> is Coming</h1>
+        <p class="text-xl text-gray-300 mb-12">We are currently building the ultimate online booking platform for our adventure park. Stay tuned!</p>
+
+        <!-- 1. Countdown Timer -->
+        <div class="flex justify-center gap-4 md:gap-8 mb-16" x-data="countdown()">
+            <div class="flex flex-col items-center bg-gray-800/80 backdrop-blur-md p-4 rounded-2xl border border-gray-700 w-20 md:w-28">
+                <span class="text-3xl md:text-5xl font-bold font-heading text-primary" x-text="days">00</span>
+                <span class="text-xs md:text-sm text-gray-400 uppercase tracking-wider mt-1">Days</span>
+            </div>
+            <div class="flex flex-col items-center bg-gray-800/80 backdrop-blur-md p-4 rounded-2xl border border-gray-700 w-20 md:w-28">
+                <span class="text-3xl md:text-5xl font-bold font-heading text-primary" x-text="hours">00</span>
+                <span class="text-xs md:text-sm text-gray-400 uppercase tracking-wider mt-1">Hours</span>
+            </div>
+            <div class="flex flex-col items-center bg-gray-800/80 backdrop-blur-md p-4 rounded-2xl border border-gray-700 w-20 md:w-28">
+                <span class="text-3xl md:text-5xl font-bold font-heading text-primary" x-text="minutes">00</span>
+                <span class="text-xs md:text-sm text-gray-400 uppercase tracking-wider mt-1">Mins</span>
+            </div>
+            <div class="flex flex-col items-center bg-gray-800/80 backdrop-blur-md p-4 rounded-2xl border border-gray-700 w-20 md:w-28">
+                <span class="text-3xl md:text-5xl font-bold font-heading text-primary" x-text="seconds">00</span>
+                <span class="text-xs md:text-sm text-gray-400 uppercase tracking-wider mt-1">Secs</span>
+            </div>
+        </div>
+
+        <!-- 3. Newsletter Signup -->
+        <div class="max-w-md mx-auto mb-12">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-gray-400 mb-4">Notify me when it's ready</h4>
+            <form class="flex">
+                <input type="email" placeholder="Your email address" class="flex-grow bg-gray-800 text-white px-4 py-3 rounded-l-xl border border-gray-700 focus:outline-none focus:border-primary">
+                <button type="submit" class="bg-primary hover:bg-cyan-500 text-white px-6 py-3 rounded-r-xl font-bold transition">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- 4. Social Media Links -->
+        <div class="flex justify-center gap-6">
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:text-white hover:bg-primary transition"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <script>
+        function countdown() {
+            return {
+                days: '00', hours: '00', minutes: '00', seconds: '00',
+                init() {
+                    const targetDate = new Date().getTime() + (30 * 24 * 60 * 60 * 1000); // 30 days from now
+                    setInterval(() => {
+                        const now = new Date().getTime();
+                        const distance = targetDate - now;
+                        
+                        this.days = String(Math.floor(distance / (1000 * 60 * 60 * 24))).padStart(2, '0');
+                        this.hours = String(Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))).padStart(2, '0');
+                        this.minutes = String(Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))).padStart(2, '0');
+                        this.seconds = String(Math.floor((distance % (1000 * 60)) / 1000)).padStart(2, '0');
+                    }, 1000);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
