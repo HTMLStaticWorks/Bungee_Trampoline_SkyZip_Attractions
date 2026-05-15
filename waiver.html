@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Safety Waiver | SkyZip Adventure Park</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: { primary: '#0ea5e9', purple: '#a855f7', charcoal: '#1f2937' },
+                    fontFamily: { sans: ['Inter'], heading: ['Poppins'] }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 pt-24">
+    <!-- Navbar -->
+    <nav id="navbar" x-data="{ mobileMenuOpen: false }" class="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md transition-all duration-300 text-gray-900 dark:text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <a href="index.html" class="text-3xl font-heading font-extrabold flex items-center gap-2">
+                    <i class="fa-solid fa-rocket text-primary"></i> <span>Sky<span class="text-primary">Zip</span></span>
+                </a>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-primary transition font-semibold">Home</a>
+                    <a href="about.html" class="hover:text-primary transition font-semibold">About</a>
+                    <a href="services.html" class="hover:text-primary transition font-semibold">Experiences</a>
+                    <a href="contact.html" class="hover:text-primary transition font-semibold">Contact</a>
+
+                    <button class="rtl-toggle hover:text-primary transition mr-2 flex items-center">
+                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                    </button>
+
+                    <button class="theme-toggle hover:text-primary transition text-xl">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+
+                    <a href="booking.html" class="bg-gradient-to-r from-primary to-purple text-white px-8 py-3 rounded-full font-bold transition shadow-lg">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button class="rtl-toggle hover:text-primary transition flex items-center">
+                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                    </button>
+
+                    <button class="theme-toggle hover:text-primary transition text-xl">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="lg:hidden absolute top-24 left-0 w-full glass bg-charcoal border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <a href="index.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50 text-center">Home</a>
+                <a href="about.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50 text-center">About</a>
+                <a href="services.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50 text-center">Experiences</a>
+                <a href="pricing.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50 text-center">Pricing</a>
+                <a href="contact.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50 text-center">Contact</a>
+                <a href="booking.html" class="bg-gradient-to-r from-primary to-purple text-white block px-3 py-3 mt-4 rounded-full font-bold text-center shadow-lg mx-auto w-full max-w-xs">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Waiver Hero -->
+    <section class="py-24 bg-charcoal text-white text-center relative">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h1 class="text-5xl font-heading font-extrabold mb-6">Digital <span class="text-primary">Safety Waiver</span></h1>
+            <p class="text-xl text-gray-400">Sign online to save time and get straight to the adventure.</p>
+        </div>
+    </section>
+
+    <!-- Waiver Form -->
+    <section class="py-20 px-4">
+        <div class="max-w-3xl mx-auto bg-white dark:bg-gray-800 rounded-3xl shadow-2xl p-8 md:p-12 border border-gray-100 dark:border-gray-700">
+            <h2 class="text-2xl font-bold mb-6 dark:text-white">Liability Release & Assumption of Risk</h2>
+            <div class="h-64 overflow-y-auto bg-gray-50 dark:bg-gray-900 p-6 rounded-xl mb-8 text-sm text-gray-500 dark:text-gray-400 border border-gray-200 dark:border-gray-800">
+                <p class="mb-4">1. I acknowledge the inherent risks in Bungee Trampolining and SkyZip activities.</p>
+                <p class="mb-4">2. I agree to follow all safety protocols and instructor commands.</p>
+                <p class="mb-4">3. I am in good physical health and have no disqualifying medical conditions.</p>
+                <p class="mb-4">4. I release SkyZip Adventure Park from all liability for injuries sustained during participation.</p>
+            </div>
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" placeholder="First Name" class="w-full p-4 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                    <input type="text" placeholder="Last Name" class="w-full p-4 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                </div>
+                <input type="email" placeholder="Email Address" class="w-full p-4 rounded-xl border border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+                <div class="h-32 bg-gray-50 dark:bg-gray-900 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl flex items-center justify-center text-gray-400">Sign Here</div>
+                <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-primary/90 transition shadow-lg">Sign & Submit Waiver</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Simple Footer -->
+    <footer class="bg-charcoal text-white py-12 text-center border-t border-gray-800">
+        <p>&copy; 2026 SkyZip Adventure Park. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
+

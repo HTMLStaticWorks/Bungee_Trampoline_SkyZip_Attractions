@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Adventure | SkyZip & Bungee Trampoline</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9', // Electric Blue
+                        purple: '#a855f7', // Neon Purple
+                        charcoal: '#1f2937', // Dark Charcoal
+                        cyan: '#06b6d4', // Cyan Glow
+                        orange: '#f97316', // Orange Highlight
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                        sora: ['Sora', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <style>
+        .step-inactive { opacity: 0.5; filter: grayscale(1); pointer-events: none; }
+        .glass-dark { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .booking-step-line { position: absolute; top: 1.5rem; left: 0; right: 0; height: 2px; background: #e5e7eb; z-index: -1; }
+        .booking-step-line-active { position: absolute; top: 1.5rem; left: 0; height: 2px; background: #0ea5e9; z-index: -1; transition: width 0.5s ease; }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden pt-24" x-data="{ 
+    step: 1, 
+    selectedExperience: '', 
+    price: 0,
+    date: '',
+    time: '',
+    guests: 1,
+    name: '',
+    weight: '',
+    agreed: false,
+    selectExperience(exp, p) {
+        this.selectedExperience = exp;
+        this.price = p;
+        this.step = 2;
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}">
+
+    <!-- Navbar -->
+    <nav id="navbar" x-data="{ mobileMenuOpen: false }" class="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md transition-all duration-300 text-gray-900 dark:text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <a href="index.html" class="text-3xl font-heading font-extrabold flex items-center gap-2">
+                    <i class="fa-solid fa-rocket text-primary"></i>
+                    <span>Sky<span class="text-primary">Zip</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <button class="rtl-toggle hover:text-primary transition mr-2 flex items-center">
+                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                    </button>
+
+                    <button class="theme-toggle hover:text-primary transition text-xl">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="lg:hidden flex items-center gap-4">
+                    <button class="rtl-toggle hover:text-primary transition flex items-center">
+                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                    </button>
+
+                    <button class="theme-toggle hover:text-primary transition text-xl">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                    </button>
+
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hover:text-primary focus:outline-none">
+                        <i class="fa-solid fa-bars text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-transition class="lg:hidden absolute top-24 left-0 w-full glass bg-charcoal border-t border-gray-800">
+            <div class="px-4 pt-2 pb-6 space-y-1 flex flex-col">
+                <p class="text-white text-center py-4 font-medium">Booking in Progress</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. Hero Section -->
+    <section class="relative py-20 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/img/booking-hero.png" alt="Booking Hero" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/60 to-gray-50 dark:to-gray-900"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center reveal">
+            <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white mb-4 tracking-tight">
+                Secure Your <span class="text-gradient">Adventure</span>
+            </h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-12">Select your experience and preferred time slot to guarantee your flight.</p>
+            
+            <!-- Step Indicator -->
+            <div class="max-w-2xl mx-auto relative mb-12">
+                <div class="booking-step-line"></div>
+                <div class="booking-step-line-active" :style="'width: ' + ((step-1) * 33.33) + '%'"></div>
+                <div class="flex justify-between relative z-10">
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300" :class="step >= 1 ? 'bg-primary text-white shadow-lg shadow-primary/40' : 'bg-white text-gray-400 border border-gray-200'">1</div>
+                        <span class="mt-2 text-xs font-bold uppercase tracking-wider" :class="step >= 1 ? 'text-primary' : 'text-gray-400'">Experience</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300" :class="step >= 2 ? 'bg-primary text-white shadow-lg shadow-primary/40' : 'bg-white text-gray-400 border border-gray-200'">2</div>
+                        <span class="mt-2 text-xs font-bold uppercase tracking-wider" :class="step >= 2 ? 'text-primary' : 'text-gray-400'">Time Slot</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300" :class="step >= 3 ? 'bg-primary text-white shadow-lg shadow-primary/40' : 'bg-white text-gray-400 border border-gray-200'">3</div>
+                        <span class="mt-2 text-xs font-bold uppercase tracking-wider" :class="step >= 3 ? 'text-primary' : 'text-gray-400'">Details</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div class="w-12 h-12 rounded-full flex items-center justify-center font-bold transition-all duration-300" :class="step >= 4 ? 'bg-green-500 text-white shadow-lg shadow-green-500/40' : 'bg-white text-gray-400 border border-gray-200'">4</div>
+                        <span class="mt-2 text-xs font-bold uppercase tracking-wider" :class="step >= 4 ? 'text-green-500' : 'text-gray-400'">Checkout</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. Booking Form Content -->
+    <section class="pb-24 -mt-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid lg:grid-cols-3 gap-8">
+                
+                <!-- Left: Form Steps -->
+                <div class="lg:col-span-2 space-y-8">
+                    
+                    <!-- Step 1: Experiences -->
+                    <div x-show="step === 1" x-transition class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+                        <h2 class="text-3xl font-heading font-bold mb-8 dark:text-white">1. Choose Your <span class="text-primary">Flight</span></h2>
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div @click="selectExperience('Bungee Only', 25)" class="group cursor-pointer p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-2xl" :class="selectedExperience === 'Bungee Only' ? 'border-primary bg-primary/5 shadow-xl' : 'border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 hover:border-primary/50'">
+                                <div class="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center text-primary text-2xl mb-4 group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-arrows-up-down"></i>
+                                </div>
+                                <h3 class="text-xl font-bold dark:text-white mb-2">Bungee Trampoline</h3>
+                                <p class="text-gray-500 text-sm mb-4">15 minutes of zero-gravity jumps and aerial flips.</p>
+                                <div class="text-2xl font-extrabold text-primary">$25</div>
+                            </div>
+
+                            <div @click="selectExperience('SkyZip Only', 30)" class="group cursor-pointer p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-2xl" :class="selectedExperience === 'SkyZip Only' ? 'border-purple bg-purple/5 shadow-xl' : 'border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 hover:border-purple/50'">
+                                <div class="w-16 h-16 rounded-xl bg-purple/20 flex items-center justify-center text-purple text-2xl mb-4 group-hover:scale-110 transition">
+                                    <i class="fa-solid fa-wind"></i>
+                                </div>
+                                <h3 class="text-xl font-bold dark:text-white mb-2">SkyZip Line</h3>
+                                <p class="text-gray-500 text-sm mb-4">High-speed panoramic flight over the scenic park.</p>
+                                <div class="text-2xl font-extrabold text-purple">$30</div>
+                            </div>
+
+                            <div @click="selectExperience('Combo Pass', 45)" class="md:col-span-2 group cursor-pointer p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-2xl relative overflow-hidden" :class="selectedExperience === 'Combo Pass' ? 'border-orange bg-orange/5 shadow-xl' : 'border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 hover:border-orange/50'">
+                                <div class="absolute top-0 right-0 bg-orange text-white px-4 py-1 rounded-bl-xl font-bold text-xs uppercase">Best Value</div>
+                                <div class="flex items-center gap-6">
+                                    <div class="w-20 h-20 rounded-xl bg-orange/20 flex items-center justify-center text-orange text-3xl group-hover:scale-110 transition">
+                                        <i class="fa-solid fa-rocket"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-2xl font-bold dark:text-white mb-1">Ultimate Combo Pass</h3>
+                                        <p class="text-gray-500 text-sm mb-2">20 Min Bungee + 1 SkyZip Ride + Priority Queue.</p>
+                                        <div class="text-3xl font-extrabold text-orange">$45</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Time Slot -->
+                    <div x-show="step === 2" x-transition class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-between mb-8">
+                            <h2 class="text-3xl font-heading font-bold dark:text-white">2. Select <span class="text-primary">Time</span></h2>
+                            <button @click="step = 1" class="text-gray-400 hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> Change Flight</button>
+                        </div>
+
+                        <div class="space-y-8">
+                            <div>
+                                <label class="block font-bold mb-4 dark:text-white">Choose Date</label>
+                                <div class="grid grid-cols-4 md:grid-cols-7 gap-3">
+                                    <template x-for="i in 7" :key="i">
+                                        <div @click="date = 'May ' + (15+i)" :class="date === 'May ' + (15+i) ? 'bg-primary text-white scale-105' : 'bg-gray-50 dark:bg-gray-900 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700'" class="p-3 rounded-xl text-center cursor-pointer transition border border-gray-100 dark:border-gray-800">
+                                            <div class="text-[10px] uppercase font-bold opacity-60">May</div>
+                                            <div class="text-xl font-extrabold" x-text="15+i"></div>
+                                        </div>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block font-bold mb-4 dark:text-white">Available Slots</label>
+                                <div class="grid grid-cols-3 md:grid-cols-4 gap-3">
+                                    <template x-for="t in ['09:00 AM', '10:30 AM', '12:00 PM', '01:30 PM', '03:00 PM', '04:30 PM', '06:00 PM', '07:30 PM']" :key="t">
+                                        <div @click="time = t" :class="time === t ? 'bg-primary text-white border-primary' : 'bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-400 border-gray-200 dark:border-gray-700 hover:border-primary/50'" class="py-3 rounded-xl text-center cursor-pointer transition border font-bold text-sm" x-text="t"></div>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <button @click="if(date && time) step = 3" class="w-full bg-charcoal dark:bg-gray-700 text-white py-4 rounded-2xl font-bold text-lg hover:bg-primary transition shadow-xl" :class="(!date || !time) ? 'opacity-50 cursor-not-allowed' : ''">Continue to Details</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Rider Details -->
+                    <div x-show="step === 3" x-transition class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+                        <div class="flex items-center justify-between mb-8">
+                            <h2 class="text-3xl font-heading font-bold dark:text-white">3. Rider <span class="text-primary">Details</span></h2>
+                            <button @click="step = 2" class="text-gray-400 hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> Change Time</button>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Rider Full Name</label>
+                                    <input type="text" x-model="name" placeholder="John Doe" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none dark:text-white">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Number of Guests</label>
+                                    <div class="flex items-center gap-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-2">
+                                        <button @click="if(guests > 1) guests--" class="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center text-primary font-bold"><i class="fa-solid fa-minus"></i></button>
+                                        <span class="flex-1 text-center font-bold text-xl dark:text-white" x-text="guests"></span>
+                                        <button @click="guests++" class="w-10 h-10 rounded-lg bg-white dark:bg-gray-800 shadow-sm flex items-center justify-center text-primary font-bold"><i class="fa-solid fa-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Estimated Weight (LBS)</label>
+                                <input type="number" x-model="weight" placeholder="150" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 focus:ring-2 focus:ring-primary outline-none dark:text-white">
+                                <p class="text-[10px] text-gray-400 mt-2 font-medium uppercase tracking-wider">Safety Requirement: Min 40 lbs / Max 250 lbs</p>
+                            </div>
+
+                            <div class="p-6 bg-primary/5 border border-primary/20 rounded-2xl">
+                                <div class="flex items-start gap-4">
+                                    <input type="checkbox" x-model="agreed" class="mt-1 w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer">
+                                    <p class="text-sm text-gray-600 dark:text-gray-400">I confirm that all riders are in good physical health and meet the weight requirements. I understand that a safety waiver must be signed on-site before the flight.</p>
+                                </div>
+                            </div>
+
+                            <button @click="if(name && weight && agreed) step = 4" class="w-full bg-gradient-to-r from-primary to-purple text-white py-4 rounded-2xl font-bold text-lg hover:scale-[1.02] transition shadow-xl btn-glow" :class="(!name || !weight || !agreed) ? 'opacity-50 cursor-not-allowed' : ''">Review & Checkout</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Checkout -->
+                    <div x-show="step === 4" x-transition class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 text-center">
+                        <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 text-green-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
+                            <i class="fa-solid fa-check-double"></i>
+                        </div>
+                        <h2 class="text-3xl font-heading font-bold mb-4 dark:text-white">Ready to <span class="text-primary">Confirm?</span></h2>
+                        <p class="text-gray-500 mb-8">Please review your booking details in the summary panel. Once confirmed, you'll be redirected to our secure payment gateway.</p>
+                        
+                        <div class="space-y-4">
+                            <button @click="alert('Booking confirmed! Redirecting to payment...')" class="w-full bg-primary text-white py-4 rounded-2xl font-bold text-lg hover:shadow-2xl hover:shadow-primary/40 transition">Pay Now <span x-text="'$' + (price * guests)"></span></button>
+                            <button @click="step = 3" class="w-full bg-gray-100 dark:bg-gray-900 text-gray-500 py-3 rounded-2xl font-bold hover:bg-gray-200 transition">Go Back</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Right: Summary Card -->
+                <div class="lg:col-span-1">
+                    <div class="sticky top-32 space-y-6">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-100 dark:border-gray-700">
+                            <h3 class="text-xl font-bold mb-6 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-4">Booking Summary</h3>
+                            
+                            <div class="space-y-4 mb-6">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-500 text-sm">Experience</span>
+                                    <span class="font-bold dark:text-white" x-text="selectedExperience || 'Not selected'"></span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-500 text-sm">Date</span>
+                                    <span class="font-bold dark:text-white" x-text="date || '---'"></span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-500 text-sm">Time</span>
+                                    <span class="font-bold dark:text-white" x-text="time || '---'"></span>
+                                </div>
+                                <div class="flex justify-between items-center border-t border-gray-50 dark:border-gray-900 pt-4">
+                                    <span class="text-gray-500 text-sm">Price per person</span>
+                                    <span class="font-bold dark:text-white" x-text="'$' + price"></span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-500 text-sm">Guests</span>
+                                    <span class="font-bold dark:text-white" x-text="guests"></span>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 dark:bg-gray-900/50 p-4 rounded-2xl border border-gray-100 dark:border-gray-800">
+                                <div class="flex justify-between items-center">
+                                    <span class="font-bold text-lg dark:text-white">Total Amount</span>
+                                    <span class="text-2xl font-extrabold text-primary" x-text="'$' + (price * guests)"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Safety Mini Card -->
+                        <div class="bg-gradient-to-br from-charcoal to-gray-900 rounded-3xl p-6 shadow-xl border border-white/5 text-white">
+                            <div class="flex items-center gap-3 mb-4">
+                                <i class="fa-solid fa-shield-halved text-cyan text-2xl"></i>
+                                <h4 class="font-bold">Safety Guaranteed</h4>
+                            </div>
+                            <ul class="text-xs space-y-3 text-gray-400">
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan"></i> Certified instructors onsite</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan"></i> 100% equipment safety record</li>
+                                <li class="flex items-center gap-2"><i class="fa-solid fa-check text-cyan"></i> Secure online payment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Custom Reveal Logic if not handled by main.js
+        window.addEventListener('DOMContentLoaded', () => {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(el => el.classList.add('reveal-visible'));
+        });
+    </script>
+</body>
+</html>
+
+

@@ -7,6 +7,10 @@
   --gray-900: #111827;
 }
 
+[x-cloak] {
+  display: none !important;
+}
+
 .glass {
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
@@ -48,13 +52,16 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--gray-900);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--primary);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--purple);
 }
@@ -65,31 +72,63 @@
   transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
 }
+
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Floating Animation */
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
+
 
 /* Loader Skeleton */
 @keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .5; }
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .5;
+  }
 }
+
 .skeleton {
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   background-color: #e5e7eb;
   border-radius: 0.25rem;
 }
+
 .dark .skeleton {
   background-color: #374151;
 }
+
+/* Hero Section Styles */
+.hero-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.overlay-dark {
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.4) 0%, rgba(17, 24, 39, 0.8) 100%);
+}
+
+.text-shadow-lg {
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon-glow {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icon-glow:hover {
+  transform: translateY(-5px) scale(1.15);
+  box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.4);
+}
+
+.social-icon-glow.facebook:hover { background-color: #1877F2; color: white; }
+.social-icon-glow.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); color: white; }
+.social-icon-glow.tiktok:hover { background-color: #000000; color: white; }
+.social-icon-glow.youtube:hover { background-color: #FF0000; color: white; }

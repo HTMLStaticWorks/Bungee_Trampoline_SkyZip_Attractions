@@ -1,0 +1,77 @@
+<footer class="bg-charcoal text-white pt-12 pb-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-8">
+                <!-- Brand -->
+                <div>
+                    <a href="index.html" class="text-3xl font-heading font-extrabold flex items-center gap-2 mb-6">
+                        <i class="fa-solid fa-rocket text-primary"></i>
+                        <span>Sky<span class="text-primary">Zip</span></span>
+                    </a>
+                    <p class="text-gray-400 mb-6">Premium adrenaline experiences for all ages. Defy gravity safely with our state-of-the-art Bungee Trampolines and SkyZip lines.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="reveal">
+                    <h4 class="text-lg font-bold mb-6 font-heading">Quick Links</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="index.html" class="hover:text-primary transition">Home</a></li>
+                        <li><a href="services.html" class="hover:text-primary transition">Experiences</a></li>
+                        <li><a href="booking.html" class="hover:text-primary transition">Pricing & Booking</a></li>
+                        <li><a href="pricing.html#birthday" class="hover:text-primary transition">Birthday Packages</a></li>
+                        <li><a href="about.html" class="hover:text-primary transition">About Us</a></li>
+                        <li><a href="contact.html" class="hover:text-primary transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Information -->
+                <div class="reveal">
+                    <h4 class="text-lg font-bold mb-6 font-heading">Information</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="services.html#safety" class="hover:text-primary transition">Safety Certifications</a></li>
+                        <li><a href="waiver.html" class="hover:text-primary transition">Sign Digital Waiver</a></li>
+                        <li><a href="services.html#faq" class="hover:text-primary transition">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div class="reveal">
+                    <h4 class="text-lg font-bold mb-6 font-heading">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for special offers and event updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-2 rounded-l-md focus:outline-none focus:ring-1 focus:ring-primary w-full border border-gray-700">
+                        <button type="submit" class="bg-primary hover:bg-cyan px-4 py-2 rounded-r-md transition text-white font-bold"><i class="fa-solid fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm">
+                <p>&copy; 2026 SkyZip & Bungee Trampoline Attractions. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="hover:text-white transition">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Booking Button -->
+    <div class="md:hidden fixed bottom-0 left-0 w-full p-4 glass bg-charcoal/90 z-40 border-t border-gray-800">
+        <a href="booking.html" class="w-full bg-gradient-to-r from-primary to-purple text-white py-3 rounded-full font-bold text-center block shadow-lg btn-glow">Book Your Adventure Now</a>
+    </div>
+
+    <!-- Script to pad body for sticky button on mobile -->
+    <script>
+        // Add padding to body on mobile so content isn't hidden behind the sticky button
+        if (window.innerWidth < 768) {
+            document.body.style.paddingBottom = '80px';
+        }
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
+
