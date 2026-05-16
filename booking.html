@@ -155,7 +155,7 @@
     </section>
 
     <!-- 2. Booking Form Content -->
-    <section class="pb-24 -mt-10">
+    <section class="relative z-20 pb-24 -mt-10">
         <div class="max-w-7xl mx-auto px-4">
             <div class="grid lg:grid-cols-3 gap-8">
                 
@@ -163,8 +163,8 @@
                 <div class="lg:col-span-2 space-y-8">
                     
                     <!-- Step 1: Experiences -->
-                    <div x-show="step === 1" x-transition class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
-                        <h2 class="text-3xl font-heading font-bold mb-8 dark:text-white">1. Choose Your <span class="text-primary">Flight</span></h2>
+                    <div x-show="step === 1" x-transition class="bg-white dark:bg-gray-800 rounded-3xl pt-10 pb-8 px-8 shadow-xl border border-gray-100 dark:border-gray-700">
+                        <h2 class="text-3xl font-heading font-bold mb-8 dark:text-white leading-normal">1. Choose Your <span class="text-primary">Flight</span></h2>
                         <div class="grid md:grid-cols-2 gap-6">
                             <div @click="selectExperience('Bungee Only', 25)" class="group cursor-pointer p-6 rounded-2xl border-2 transition-all duration-300 hover:shadow-2xl" :class="selectedExperience === 'Bungee Only' ? 'border-primary bg-primary/5 shadow-xl' : 'border-gray-100 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/50 hover:border-primary/50'">
                                 <div class="w-16 h-16 rounded-xl bg-primary/20 flex items-center justify-center text-primary text-2xl mb-4 group-hover:scale-110 transition">
@@ -201,9 +201,9 @@
                     </div>
 
                     <!-- Step 2: Time Slot -->
-                    <div x-show="step === 2" x-transition class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+                    <div x-show="step === 2" x-transition class="bg-white dark:bg-gray-800 rounded-3xl pt-10 pb-8 px-8 shadow-xl border border-gray-100 dark:border-gray-700">
                         <div class="flex items-center justify-between mb-8">
-                            <h2 class="text-3xl font-heading font-bold dark:text-white">2. Select <span class="text-primary">Time</span></h2>
+                            <h2 class="text-3xl font-heading font-bold dark:text-white leading-normal">2. Select <span class="text-primary">Time</span></h2>
                             <button @click="step = 1" class="text-gray-400 hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> Change Flight</button>
                         </div>
 
@@ -234,9 +234,9 @@
                     </div>
 
                     <!-- Step 3: Rider Details -->
-                    <div x-show="step === 3" x-transition class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+                    <div x-show="step === 3" x-transition class="bg-white dark:bg-gray-800 rounded-3xl pt-10 pb-8 px-8 shadow-xl border border-gray-100 dark:border-gray-700">
                         <div class="flex items-center justify-between mb-8">
-                            <h2 class="text-3xl font-heading font-bold dark:text-white">3. Rider <span class="text-primary">Details</span></h2>
+                            <h2 class="text-3xl font-heading font-bold dark:text-white leading-normal">3. Rider <span class="text-primary">Details</span></h2>
                             <button @click="step = 2" class="text-gray-400 hover:text-primary transition flex items-center gap-2"><i class="fa-solid fa-arrow-left"></i> Change Time</button>
                         </div>
 
@@ -274,11 +274,11 @@
                     </div>
 
                     <!-- Step 4: Checkout -->
-                    <div x-show="step === 4" x-transition class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 text-center">
+                    <div x-show="step === 4" x-transition class="bg-white dark:bg-gray-800 rounded-3xl pt-10 pb-8 px-8 shadow-xl border border-gray-100 dark:border-gray-700 text-center">
                         <div class="w-20 h-20 bg-green-100 dark:bg-green-900/30 text-green-500 rounded-full flex items-center justify-center text-4xl mx-auto mb-6">
                             <i class="fa-solid fa-check-double"></i>
                         </div>
-                        <h2 class="text-3xl font-heading font-bold mb-4 dark:text-white">Ready to <span class="text-primary">Confirm?</span></h2>
+                        <h2 class="text-3xl font-heading font-bold mb-4 dark:text-white leading-normal">Ready to <span class="text-primary">Confirm?</span></h2>
                         <p class="text-gray-500 mb-8">Please review your booking details in the summary panel. Once confirmed, you'll be redirected to our secure payment gateway.</p>
                         
                         <div class="space-y-4">
@@ -292,7 +292,7 @@
                 <!-- Right: Summary Card -->
                 <div class="lg:col-span-1">
                     <div class="sticky top-32 space-y-6">
-                        <div class="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-100 dark:border-gray-700">
+                        <div class="bg-white dark:bg-gray-800 rounded-3xl pt-8 pb-6 px-6 shadow-xl border border-gray-100 dark:border-gray-700">
                             <h3 class="text-xl font-bold mb-6 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-4">Booking Summary</h3>
                             
                             <div class="space-y-4 mb-6">
