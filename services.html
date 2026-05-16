@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0ea5e9', purple: '#a855f7', charcoal: '#1f2937' }, fontFamily: { sans: ['Inter'], heading: ['Poppins'] } } } }
+        tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0ea5e9', purple: '#a855f7', charcoal: '#1f2937', cyan: '#06b6d4', orange: '#f97316' }, fontFamily: { sans: ['Inter'], heading: ['Poppins'] } } } }
     </script>
     <link rel="stylesheet" href="assets/css/style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -27,7 +27,7 @@
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-8">
+                <div class="hidden lg:flex items-center gap-8">
                     <!-- Home Dropdown -->
                     <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
                         <button class="hover:text-primary transition font-semibold font-sora flex items-center gap-1">
@@ -49,7 +49,7 @@
                     <a href="pricing.html" class="hover:text-primary transition font-semibold font-sora">Pricing</a>
                     <a href="contact.html" class="hover:text-primary transition font-semibold font-sora">Contact</a>
                     
-                    <button class="rtl-toggle hover:text-primary transition mr-2 flex items-center">
+                    <button class="rtl-toggle hover:text-primary transition flex items-center">
                         <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
                     </button>
 
@@ -176,18 +176,18 @@
         <div class="max-w-5xl mx-auto px-4 text-center reveal">
             <h2 class="text-4xl font-heading font-bold mb-12">Mandatory <span class="text-primary">Safety Instructions</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-primary transition duration-300">
+                <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-primary hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
                     <i class="fa-solid fa-shirt text-4xl text-primary mb-6"></i>
                     <h4 class="font-bold text-xl mb-3">Proper Attire</h4>
                     <p class="text-gray-400">Wear closed-toe shoes and comfortable activewear. No skirts or dresses.</p>
                 </div>
-                <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-purple transition duration-300">
+                <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-purple hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple/20 transition-all duration-300">
                     <i class="fa-solid fa-hand-holding-medical text-4xl text-purple mb-6"></i>
                     <h4 class="font-bold text-xl mb-3">Health Notice</h4>
                     <p class="text-gray-400">Not suitable for pregnant women or those with recent back/neck injuries.</p>
                 </div>
                 <div class="md:col-span-2 lg:col-span-1 flex justify-center">
-                    <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-cyan transition duration-300 w-full max-w-md lg:max-w-none">
+                    <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-cyan hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan/20 transition-all duration-300 w-full max-w-md lg:max-w-none">
                         <i class="fa-solid fa-file-signature text-4xl text-cyan mb-6"></i>
                         <h4 class="font-bold text-xl mb-3">Sign Waiver</h4>
                         <p class="text-gray-400 text-center md:text-left lg:text-center">All participants must have a signed digital waiver before entering.</p>

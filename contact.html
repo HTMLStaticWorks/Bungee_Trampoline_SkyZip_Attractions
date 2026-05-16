@@ -26,7 +26,7 @@
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-8">
+                <div class="hidden lg:flex items-center gap-8">
                     <!-- Home Dropdown -->
                     <div x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false" class="relative">
                         <button class="hover:text-primary transition font-semibold font-sora flex items-center gap-1">
@@ -48,7 +48,7 @@
                     <a href="pricing.html" class="hover:text-primary transition font-semibold font-sora">Pricing</a>
                     <a href="contact.html" class="text-primary transition font-semibold font-sora">Contact</a>
                     
-                    <button class="rtl-toggle hover:text-primary transition mr-2 flex items-center">
+                    <button class="rtl-toggle hover:text-primary transition flex items-center">
                         <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
                     </button>
 
