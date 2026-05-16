@@ -50,7 +50,7 @@
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 12px;
 }
 
 ::-webkit-scrollbar-track {
@@ -171,4 +171,8 @@
 [dir="rtl"] #back-to-top {
   right: auto;
   left: 30px;
+}
+
+.theme-toggle i {
+  -webkit-text-stroke: 1.2px currentColor;
 }
