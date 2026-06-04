@@ -50,7 +50,7 @@
                     <a href="contact.html" class="hover:text-primary transition font-semibold font-sora">Contact</a>
                     
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
-                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
 
                     <button class="theme-toggle hover:text-primary transition text-xl">
@@ -64,7 +64,7 @@
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex items-center gap-4">
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
-                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
 
                     <button class="theme-toggle hover:text-primary transition text-xl">
@@ -156,6 +156,180 @@
         </div>
     </section>
 
+    <!-- 2.5 Group Discount Calculator & Tier Table -->
+    <section class="py-20 bg-gray-50 dark:bg-charcoal border-t border-b border-gray-100 dark:border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Group Savings</span>
+                <h2 class="text-4xl font-heading font-bold dark:text-white">Interactive Price <span class="text-gradient">Estimator</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto mt-2">Bring your family, friends, or coworkers and unlock significant volume discounts.</p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start reveal" x-data="{
+                experience: 'combo',
+                guests: 5,
+                photos: false,
+                express: false,
+                getBasePrice() {
+                    if (this.experience === 'bungee') return 25;
+                    if (this.experience === 'skyzip') return 30;
+                    return 45;
+                },
+                getDiscountRate() {
+                    if (this.guests >= 20) return 0.20; // 20% off
+                    if (this.guests >= 10) return 0.15; // 15% off
+                    if (this.guests >= 5) return 0.10;  // 10% off
+                    return 0;
+                },
+                getAddonsCost() {
+                    let cost = 0;
+                    if (this.photos) cost += 10;   // $10 flat per person
+                    if (this.express) cost += 15;  // $15 flat per person
+                    return cost;
+                },
+                calculateSubtotal() {
+                    return this.getBasePrice() * this.guests;
+                },
+                calculateDiscount() {
+                    return this.calculateSubtotal() * this.getDiscountRate();
+                },
+                calculateTotal() {
+                    return (this.calculateSubtotal() - this.calculateDiscount()) + (this.getAddonsCost() * this.guests);
+                }
+            }">
+                <!-- Left Column: Estimator Controls -->
+                <div class="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700">
+                    <h3 class="text-2xl font-bold font-heading mb-6 dark:text-white">Configure Your Visit</h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Select Experience -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Select Attraction</label>
+                            <select x-model="experience" class="w-full bg-gray-55 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary dark:text-white">
+                                <option value="bungee">Bungee Trampoline ($25 / person)</option>
+                                <option value="skyzip">SkyZip Line ($30 / person)</option>
+                                <option value="combo">Combo Pass ($45 / person)</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Guest Count -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Number of Guests: <span x-text="guests" class="text-primary font-bold"></span></label>
+                            <input type="range" min="1" max="50" x-model="guests" class="w-full h-2 bg-gray-200 dark:bg-gray-700 rounded-lg appearance-none cursor-pointer accent-primary">
+                            <div class="flex justify-between text-xs text-gray-400 mt-1">
+                                <span>1 Guest</span>
+                                <span>10 (15% Off)</span>
+                                <span>20+ (20% Off)</span>
+                                <span>50 Guests</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Add-ons -->
+                        <div>
+                            <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Add-ons (Optional)</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input type="checkbox" x-model="photos" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Digital Photo Package (+$10 / guest)</span>
+                                </label>
+                                <label class="flex items-center gap-3 cursor-pointer">
+                                    <input type="checkbox" x-model="express" class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary">
+                                    <span class="text-sm text-gray-600 dark:text-gray-400">Express Priority Queue Pass (+$15 / guest)</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column: Live Bill Summary -->
+                <div class="bg-gradient-to-br from-charcoal to-gray-900 text-white rounded-3xl p-8 shadow-xl border border-white/5 flex flex-col justify-between h-full min-h-[380px]">
+                    <div>
+                        <h3 class="text-2xl font-bold font-heading mb-6">Estimate Summary</h3>
+                        
+                        <div class="space-y-4 text-sm text-gray-300 mb-8">
+                            <div class="flex justify-between">
+                                <span>Experience Subtotal</span>
+                                <span class="font-bold text-white" x-text="'$' + calculateSubtotal()"></span>
+                            </div>
+                            <div class="flex justify-between text-emerald-400 font-bold" x-show="getDiscountRate() > 0" x-cloak>
+                                <span x-text="'Group Discount (' + (getDiscountRate() * 100) + '%)'"></span>
+                                <span x-text="'-$' + calculateDiscount().toFixed(2)"></span>
+                            </div>
+                            <div class="flex justify-between" x-show="photos" x-cloak>
+                                <span>Digital Photos</span>
+                                <span class="font-bold text-white" x-text="'$' + (10 * guests)"></span>
+                            </div>
+                            <div class="flex justify-between" x-show="express" x-cloak>
+                                <span>Express Queue Passes</span>
+                                <span class="font-bold text-white" x-text="'$' + (15 * guests)"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-white/10 pt-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <div>
+                                <span class="text-sm text-gray-400">Estimated Total</span>
+                                <div class="text-[10px] text-gray-500 uppercase tracking-widest mt-1">Tax included</div>
+                            </div>
+                            <div class="text-4xl font-extrabold text-primary" x-text="'$' + calculateTotal().toFixed(2)"></div>
+                        </div>
+                        
+                        <a href="booking.html" class="block w-full text-center bg-gradient-to-r from-primary to-purple hover:scale-[1.02] transition font-bold py-4 rounded-xl shadow-lg">Proceed to Reservation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tier Chart Table -->
+            <div class="mt-16 bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl border border-gray-100 dark:border-gray-700 reveal">
+                <h3 class="text-2xl font-bold font-heading mb-6 dark:text-white text-center">Group Discount Tiers</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="border-b border-gray-200 dark:border-gray-700 text-gray-400 text-sm uppercase tracking-wider">
+                                <th class="py-4 px-6">Group Size</th>
+                                <th class="py-4 px-6">Discount</th>
+                                <th class="py-4 px-6">Bungee Only</th>
+                                <th class="py-4 px-6">SkyZip Only</th>
+                                <th class="py-4 px-6">Combo Pass</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-gray-600 dark:text-gray-300 text-sm divide-y divide-gray-100 dark:divide-gray-800">
+                            <tr>
+                                <td class="py-4 px-6 font-bold">1 - 4 Guests</td>
+                                <td class="py-4 px-6 text-gray-400">None</td>
+                                <td class="py-4 px-6">$25.00</td>
+                                <td class="py-4 px-6">$30.00</td>
+                                <td class="py-4 px-6">$45.00</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-bold">5 - 9 Guests</td>
+                                <td class="py-4 px-6 text-emerald-500 font-bold">10% Off</td>
+                                <td class="py-4 px-6">$22.50</td>
+                                <td class="py-4 px-6">$27.00</td>
+                                <td class="py-4 px-6">$40.50</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-bold">10 - 19 Guests</td>
+                                <td class="py-4 px-6 text-emerald-500 font-bold">15% Off</td>
+                                <td class="py-4 px-6">$21.25</td>
+                                <td class="py-4 px-6">$25.50</td>
+                                <td class="py-4 px-6">$38.25</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 px-6 font-bold">20+ Guests</td>
+                                <td class="py-4 px-6 text-emerald-500 font-bold">20% Off</td>
+                                <td class="py-4 px-6">$20.00</td>
+                                <td class="py-4 px-6">$24.00</td>
+                                <td class="py-4 px-6">$36.00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 3. Group/Birthday Packages -->
     <section class="py-20 bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700" id="birthday">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -179,7 +353,125 @@
                     </div>
                 </div>
                 <div class="lg:w-1/2">
-                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800&q=80" alt="Party" class="rounded-3xl shadow-xl w-full">
+                    <img src="assets/img/party-package.png" alt="Party" class="rounded-3xl shadow-xl w-full">
+                </div>
+            </div>
+        </div>
+    <!-- 3.5 Plan Your Flight (Timings & Eligibility) -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative">
+        <div class="absolute inset-0 overflow-hidden -z-10">
+            <div class="absolute top-1/2 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-gray-900 dark:text-white">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Visitor Guide</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Plan Your <span class="text-gradient">Flight Details</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Check operating hours, age/height restrictions, and who our experiences are best suited for.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal">
+                <!-- Card 1: Operating Hours -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">Operating Hours</h3>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Monday - Friday</span>
+                            <span class="font-bold text-primary">10:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Saturday - Sunday</span>
+                            <span class="font-bold text-primary">9:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Public Holidays</span>
+                            <span class="font-bold text-purple">9:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-primary/5 rounded-2xl p-4 border border-primary/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-left">
+                            <i class="fa-solid fa-triangle-exclamation text-primary mr-1"></i>
+                            <strong>Note:</strong> Sessions run every 30 minutes. Please arrive 15 minutes before your booked time slot to complete harnessing and briefing.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Bungee Trampoline Details -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-cyan/30 transition-all duration-300 flex flex-col">
+                    <div class="w-14 h-14 bg-cyan/10 rounded-2xl flex items-center justify-center text-cyan text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">Bungee Trampoline</h3>
+                    <div class="space-y-4 flex-grow text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-weight-scale text-cyan w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Weight Range</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">40 lbs - 220 lbs (18 kg - 100 kg)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-user text-cyan w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Minimum Age</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">5 Years old and up</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-heart-pulse text-cyan w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Suitable For</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Kids, teens, and families looking for safe, high-flying flips.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-cyan/5 rounded-2xl p-4 border border-cyan/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-left">
+                            <i class="fa-solid fa-circle-check text-cyan mr-1"></i>
+                            Perfect for developing aerial coordination and gravity-defying tricks in a 100% controlled setting.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 3: SkyZip Line Details -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-purple/30 transition-all duration-300 flex flex-col">
+                    <div class="w-14 h-14 bg-purple/10 rounded-2xl flex items-center justify-center text-purple text-2xl mb-6">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">SkyZip Line</h3>
+                    <div class="space-y-4 flex-grow text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-weight-scale text-purple w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Weight Range</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">60 lbs - 250 lbs (27 kg - 113 kg)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-ruler-vertical text-purple w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Minimum Height</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">48 Inches (4 ft / 122 cm)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-person-running text-purple w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Suitable For</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Teens, adults, and groups looking for speed, heights, and beautiful views.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-purple/5 rounded-2xl p-4 border border-purple/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-left">
+                            <i class="fa-solid fa-circle-check text-purple mr-1"></i>
+                            Equipped with automated magnetic zipStop braking. High speed, smooth stop, zero user intervention required!
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>

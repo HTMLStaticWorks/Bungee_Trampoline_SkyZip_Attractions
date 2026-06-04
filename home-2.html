@@ -74,7 +74,7 @@
                     <a href="contact.html" class="hover:text-primary transition font-semibold font-sora">Contact</a>
                     
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
-                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
                     <button class="theme-toggle hover:text-primary transition text-xl">
                         <i class="fa-solid fa-moon dark:hidden"></i>
@@ -87,7 +87,7 @@
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex items-center gap-4">
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
-                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
 
                     <button class="theme-toggle hover:text-primary transition text-xl">
@@ -124,7 +124,7 @@
     </nav>
 
     <!-- 1. Fullscreen Video Hero -->
-    <section class="relative h-screen flex items-center justify-center overflow-hidden bg-charcoal">
+    <section class="relative h-[75vh] min-h-[600px] flex items-center justify-center overflow-hidden bg-charcoal">
         <div class="absolute inset-0 z-0">
             <!-- Cinematic Background Image -->
             <img src="assets/img/hero-bg-2.png" alt="Adventure Background" class="w-full h-full object-cover opacity-60 mix-blend-overlay">
@@ -150,7 +150,7 @@
             <div class="flex flex-col lg:flex-row gap-12 items-center">
                 <!-- Interactive Cards -->
                 <div class="w-full lg:w-1/2 space-y-6 reveal">
-                    <div class="glass p-6 rounded-3xl border border-primary/30 hover:border-primary transition cursor-pointer group flex items-center gap-6">
+                    <a href="bungee-details.html" class="block glass p-6 rounded-3xl border border-primary/30 hover:border-primary transition cursor-pointer group flex items-center gap-6">
                         <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
                             <img src="assets/img/bungee-trampoline.png" alt="Bungee" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         </div>
@@ -158,9 +158,9 @@
                             <h3 class="text-2xl font-bold font-heading mb-2 group-hover:text-primary transition">Bungee Trampoline</h3>
                             <p class="text-gray-400">Multiple flips and 25ft jumps with expert safety harnessing.</p>
                         </div>
-                    </div>
+                    </a>
                     
-                    <div class="glass p-6 rounded-3xl border border-purple/30 hover:border-purple transition cursor-pointer group flex items-center gap-6">
+                    <a href="skyzip-details.html" class="block glass p-6 rounded-3xl border border-purple/30 hover:border-purple transition cursor-pointer group flex items-center gap-6">
                         <div class="w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0">
                             <img src="assets/img/skyzip-line.png" alt="SkyZip" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
                         </div>
@@ -168,7 +168,7 @@
                             <h3 class="text-2xl font-bold font-heading mb-2 group-hover:text-purple transition">SkyZip Line</h3>
                             <p class="text-gray-400">High-speed panoramic views across our adventure park.</p>
                         </div>
-                    </div>
+                    </a>
                 </div>
                 
                 <div class="w-full lg:w-1/2 reveal">
@@ -219,27 +219,165 @@
                         </div>
                     </div>
                     
-                    <div class="bg-gray-50 dark:bg-gray-900 p-6 rounded-2xl">
-                        <h4 class="font-bold text-lg mb-4 dark:text-white">Available Attractions for You:</h4>
+                    <div class="bg-gray-55 dark:bg-gray-900 p-6 rounded-2xl">
+                        <h4 class="font-bold text-lg mb-4 dark:text-white">Adventure Eligibility Status:</h4>
                         
                         <!-- Logic for display -->
                         <div class="space-y-4">
-                            <div class="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
-                                <div class="flex items-center gap-3 text-green-700 dark:text-green-400">
-                                    <i class="fa-solid fa-check-circle text-xl"></i>
-                                    <span class="font-bold">Bungee Trampoline</span>
+                            <!-- Bungee Trampoline check -->
+                            <div :class="(unit === 'lbs' ? (weight >= 40 && weight <= 220) : (weight >= 18 && weight <= 100)) 
+                                ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-400' 
+                                : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-700 dark:text-red-400'"
+                                 class="flex items-center justify-between p-4 rounded-xl border transition-all duration-300">
+                                <div class="flex items-center gap-3">
+                                    <i :class="(unit === 'lbs' ? (weight >= 40 && weight <= 220) : (weight >= 18 && weight <= 100)) ? 'fa-solid fa-check-circle text-xl text-green-500' : 'fa-solid fa-triangle-exclamation text-xl text-red-500'"></i>
+                                    <div class="text-left">
+                                        <span class="font-bold block dark:text-white">Bungee Trampoline</span>
+                                        <span class="text-xs text-gray-500 dark:text-gray-400" x-show="!(unit === 'lbs' ? (weight >= 40 && weight <= 220) : (weight >= 18 && weight <= 100))">
+                                            Requires weight between <span class="font-semibold" x-text="unit === 'lbs' ? '40 - 220 lbs' : '18 - 100 kg'"></span>
+                                        </span>
+                                        <span class="text-xs text-gray-500 dark:text-gray-400" x-show="unit === 'lbs' ? (weight >= 40 && weight <= 220) : (weight >= 18 && weight <= 100)">
+                                            Suitable for children (5+) & adults
+                                        </span>
+                                    </div>
                                 </div>
-                                <span class="text-xs text-green-600 bg-green-100 dark:bg-green-800 dark:text-green-200 px-2 py-1 rounded">Approved</span>
+                                <span :class="(unit === 'lbs' ? (weight >= 40 && weight <= 220) : (weight >= 18 && weight <= 100)) 
+                                    ? 'text-green-600 bg-green-100 dark:bg-green-800/50 dark:text-green-200' 
+                                    : 'text-red-600 bg-red-100 dark:bg-red-800/50 dark:text-red-200'"
+                                      class="text-xs font-bold px-2 py-1 rounded" x-text="(unit === 'lbs' ? (weight >= 40 && weight <= 220) : (weight >= 18 && weight <= 100)) ? 'Approved' : 'Not Eligible'"></span>
                             </div>
                             
-                            <div class="flex items-center justify-between p-4 bg-green-50 dark:bg-green-900/20 rounded-xl border border-green-200 dark:border-green-800">
-                                <div class="flex items-center gap-3 text-green-700 dark:text-green-400">
-                                    <i class="fa-solid fa-check-circle text-xl"></i>
-                                    <span class="font-bold">SkyZip Line</span>
+                            <!-- SkyZip Line check -->
+                            <div :class="((unit === 'lbs' ? (weight >= 60 && weight <= 250) : (weight >= 27 && weight <= 113)) && (unit === 'lbs' ? height >= 48 : height >= 122)) 
+                                ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800 text-green-700 dark:text-green-400' 
+                                : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800 text-red-700 dark:text-red-400'"
+                                 class="flex items-center justify-between p-4 rounded-xl border transition-all duration-300">
+                                <div class="flex items-center gap-3">
+                                    <i :class="((unit === 'lbs' ? (weight >= 60 && weight <= 250) : (weight >= 27 && weight <= 113)) && (unit === 'lbs' ? height >= 48 : height >= 122)) ? 'fa-solid fa-check-circle text-xl text-green-500' : 'fa-solid fa-triangle-exclamation text-xl text-red-500'"></i>
+                                    <div class="text-left">
+                                        <span class="font-bold block dark:text-white">SkyZip Line</span>
+                                        <span class="text-xs text-gray-500 dark:text-gray-400" x-show="!((unit === 'lbs' ? (weight >= 60 && weight <= 250) : (weight >= 27 && weight <= 113)) && (unit === 'lbs' ? height >= 48 : height >= 122))">
+                                            Requires weight <span class="font-semibold" x-text="unit === 'lbs' ? '60 - 250 lbs' : '27 - 113 kg'"></span> & height min <span class="font-semibold" x-text="unit === 'lbs' ? '48 inches' : '122 cm'"></span>
+                                        </span>
+                                        <span class="text-xs text-gray-500 dark:text-gray-400" x-show="((unit === 'lbs' ? (weight >= 60 && weight <= 250) : (weight >= 27 && weight <= 113)) && (unit === 'lbs' ? height >= 48 : height >= 122))">
+                                            Suitable for teens, adults & groups
+                                        </span>
+                                    </div>
                                 </div>
-                                <span class="text-xs text-green-600 bg-green-100 dark:bg-green-800 dark:text-green-200 px-2 py-1 rounded">Approved</span>
+                                <span :class="((unit === 'lbs' ? (weight >= 60 && weight <= 250) : (weight >= 27 && weight <= 113)) && (unit === 'lbs' ? height >= 48 : height >= 122)) 
+                                    ? 'text-green-600 bg-green-100 dark:bg-green-800/50 dark:text-green-200' 
+                                    : 'text-red-600 bg-red-100 dark:bg-red-800/50 dark:text-red-200'"
+                                      class="text-xs font-bold px-2 py-1 rounded" x-text="((unit === 'lbs' ? (weight >= 60 && weight <= 250) : (weight >= 27 && weight <= 113)) && (unit === 'lbs' ? height >= 48 : height >= 122)) ? 'Approved' : 'Not Eligible'"></span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3.5 Plan Your Flight (Timings & Eligibility) -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative">
+        <div class="absolute inset-0 overflow-hidden -z-10">
+            <div class="absolute top-1/2 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Visitor Guide</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Plan Your <span class="text-gradient">Flight Details</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Check operating hours, age/height restrictions, and who our experiences are best suited for.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal">
+                <!-- Card 1: Operating Hours -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">Operating Hours</h3>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex flex-col items-center pb-3 border-b border-gray-100 dark:border-gray-800 gap-1">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Monday - Friday</span>
+                            <span class="font-bold text-primary">10:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="flex flex-col items-center pb-3 border-b border-gray-100 dark:border-gray-800 gap-1">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Saturday - Sunday</span>
+                            <span class="font-bold text-primary">9:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="flex flex-col items-center pb-3 border-b border-gray-100 dark:border-gray-800 gap-1">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Public Holidays</span>
+                            <span class="font-bold text-purple">9:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-primary/5 rounded-2xl p-4 border border-primary/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-center">
+                            <i class="fa-solid fa-triangle-exclamation text-primary mr-1"></i>
+                            <strong>Note:</strong> Sessions run every 30 minutes. Please arrive 15 minutes before your booked time slot to complete harnessing and briefing.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Bungee Trampoline Details -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-cyan/30 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-14 h-14 bg-cyan/10 rounded-2xl flex items-center justify-center text-cyan text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">Bungee Trampoline</h3>
+                    <div class="space-y-4 flex-grow text-center">
+                        <div class="flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-weight-scale text-cyan text-lg"></i>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Weight Range</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">40 lbs - 220 lbs (18 kg - 100 kg)</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-user text-cyan text-lg"></i>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Minimum Age</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">5 Years old and up</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-heart-pulse text-cyan text-lg"></i>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Suitable For</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">Kids, teens, and families looking for safe, high-flying flips.</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-cyan/5 rounded-2xl p-4 border border-cyan/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-center">
+                            <i class="fa-solid fa-circle-check text-cyan mr-1"></i>
+                            Perfect for developing aerial coordination and gravity-defying tricks in a 100% controlled setting.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 3: SkyZip Line Details -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-purple/30 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-14 h-14 bg-purple/10 rounded-2xl flex items-center justify-center text-purple text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">SkyZip Line</h3>
+                    <div class="space-y-4 flex-grow text-center">
+                        <div class="flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-weight-scale text-purple text-lg"></i>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Weight Range</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">60 lbs - 250 lbs (27 kg - 113 kg)</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-ruler-vertical text-purple text-lg"></i>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Minimum Height</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">48 Inches (4 ft / 122 cm)</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <i class="fa-solid fa-person-running text-purple text-lg"></i>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider">Suitable For</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">Teens, adults, and groups looking for speed, heights, and beautiful views.</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-purple/5 rounded-2xl p-4 border border-purple/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-center">
+                            <i class="fa-solid fa-circle-check text-purple mr-1"></i>
+                            Equipped with automated magnetic zipStop braking. High speed, smooth stop, zero user intervention required!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -277,6 +415,52 @@
         </div>
     </section>
 
+    <!-- 4.5 Gear & Safety Technology Details -->
+    <section class="py-24 bg-gray-50 dark:bg-charcoal text-gray-900 dark:text-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Technology & Engineering</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4">Engineered for <span class="text-gradient">Ultimate Safety</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">We exclusively partner with world-renowned mountaineering brands to provide double-redundant equipment safety systems.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                <!-- Tech 1 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-xl hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-full h-48 mb-6 rounded-2xl overflow-hidden">
+                        <img src="assets/img/tech-harness.png" alt="Petzl Full-Body Harness" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Petzl Full-Body Harnesses</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Industry-standard harnesses with dual-redundant buckles, padded loops, and anatomical support. Specifically designed to support heights up to 25ft and handle impact limits exceeding 2,200 lbs of load.
+                    </p>
+                </div>
+                
+                <!-- Tech 2 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-xl hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-full h-48 mb-6 rounded-2xl overflow-hidden">
+                        <img src="assets/img/tech-ropes.png" alt="Edelrid Dynamic Ropes" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Edelrid Dynamic Ropes</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        German-engineered multi-braid elastic bungee ropes with integrated safety static webbing. This design guarantees that even in extreme tension events, backup support prevents overloading.
+                    </p>
+                </div>
+                
+                <!-- Tech 3 -->
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 shadow-xl hover:-translate-y-2 transition duration-300 text-center">
+                    <div class="w-full h-48 mb-6 rounded-2xl overflow-hidden">
+                        <img src="assets/img/tech-brakes.png" alt="Magnetic Eddy-Brakes" class="w-full h-full object-cover">
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-heading">Magnetic Eddy-Brakes</h3>
+                    <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        The ZipStop system uses patented magnetic eddy-current braking to slow down zip liners gently based on their speed and weight. Fully automated with zero mechanical pads to wear down.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 5. Safety Training Video Area -->
     <section class="py-24 bg-white dark:bg-gray-900 relative">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -286,7 +470,7 @@
             </div>
             
             <div class="max-w-4xl mx-auto rounded-3xl overflow-hidden shadow-2xl relative group cursor-pointer reveal bg-charcoal">
-                <img src="https://images.unsplash.com/photo-1551698618-1dfe5d97d256?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Safety Briefing" class="w-full h-auto opacity-70 group-hover:scale-105 transition duration-700">
+                <img src="assets/img/safety-gear.png" alt="Safety Briefing" class="w-full h-auto opacity-70 group-hover:scale-105 transition duration-700">
                 <div class="absolute inset-0 flex items-center justify-center">
 
                 </div>

@@ -45,7 +45,7 @@
 <body class="font-sans antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300 overflow-x-hidden">
 
     <!-- Navbar -->
-    <nav id="navbar" class="fixed w-full z-50 bg-transparent transition-all duration-300 text-white nav-transparent" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
+    <nav id="navbar" class="fixed top-0 w-full z-50 bg-transparent transition-all duration-300 text-white nav-transparent" x-data="{ mobileMenuOpen: false, scrolled: false }" @scroll.window="scrolled = (window.pageYOffset > 50)">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
                 <!-- Logo -->
@@ -80,7 +80,7 @@
                     <a href="contact.html" class="hover:text-primary transition font-semibold font-sora">Contact</a>
                     
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
-                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
 
                     <button class="theme-toggle hover:text-primary transition text-xl">
@@ -94,7 +94,7 @@
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex items-center gap-4">
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
-                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
 
                     <button class="theme-toggle hover:text-primary transition text-xl">
@@ -102,8 +102,8 @@
                         <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
                     </button>
 
-                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hover:text-primary focus:outline-none">
-                        <i class="fa-solid fa-bars text-3xl"></i>
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" class="hover:text-primary focus:outline-none flex items-center justify-center h-[38px]">
+                        <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
@@ -134,11 +134,17 @@
     <section class="relative h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <!-- Background Image -->
-            <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Bungee Jumping" class="w-full h-full object-cover">
+            <img src="assets/img/hero-bg-1.png" alt="Bungee Jumping" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gray-900/60 dark:bg-gray-900/50"></div>
         </div>
         
         <div class="relative z-10 text-center px-4 max-w-5xl mx-auto reveal">
+            <div class="inline-flex items-center gap-6 py-2 px-4 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 font-medium text-xs mb-6 backdrop-blur-md">
+                <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Status: Park Open</span>
+                <span class="text-gray-400">|</span>
+                <span><i class="fa-solid fa-sun text-yellow-400"></i> Weather: 78Â°F & Sunny</span>
+            </div>
+            <br>
             <span class="inline-block py-1 px-3 rounded-full bg-primary/20 border border-primary/50 text-primary font-bold text-sm mb-6 backdrop-blur-md uppercase tracking-wider">Premium Adventure Park</span>
             <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white mb-6 leading-tight">
                 Defy Gravity.<br>Experience <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-cyan">The Thrill.</span>
@@ -162,7 +168,7 @@
     </section>
 
     <!-- 2. Attraction Highlights -->
-    <section id="highlights" class="py-24 bg-white dark:bg-gray-900 relative">
+    <section id="highlights" class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
         <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl -z-10 mt-10"></div>
         <div class="absolute bottom-0 left-0 w-96 h-96 bg-purple/10 rounded-full blur-3xl -z-10"></div>
         
@@ -174,7 +180,7 @@
             
             <div class="grid md:grid-cols-2 gap-10">
                 <!-- Highlight 1 -->
-                <div class="rounded-3xl overflow-hidden glass hover-zoom group cursor-pointer border border-gray-200 dark:border-gray-800 shadow-xl reveal">
+                <a href="bungee-details.html" class="block rounded-3xl overflow-hidden glass hover-zoom group cursor-pointer border border-gray-200 dark:border-gray-800 shadow-xl reveal">
                     <div class="relative h-80 overflow-hidden">
                         <img src="assets/img/bungee-premium.png" alt="Bungee Trampoline" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
@@ -184,10 +190,10 @@
                             <p class="text-gray-300">Leap up to 25 feet in the air and perform flips with total safety.</p>
                         </div>
                     </div>
-                </div>
+                </a>
                 
                 <!-- Highlight 2 -->
-                <div class="rounded-3xl overflow-hidden glass hover-zoom group cursor-pointer border border-gray-200 dark:border-gray-800 shadow-xl reveal" style="transition-delay: 100ms;">
+                <a href="skyzip-details.html" class="block rounded-3xl overflow-hidden glass hover-zoom group cursor-pointer border border-gray-200 dark:border-gray-800 shadow-xl reveal" style="transition-delay: 100ms;">
                     <div class="relative h-80 overflow-hidden">
                         <img src="assets/img/skyzip-premium.png" alt="SkyZip Adventure" class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-80"></div>
@@ -197,7 +203,7 @@
                             <p class="text-gray-300">Soar through the air across our scenic park at breathtaking speeds.</p>
                         </div>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -214,7 +220,7 @@
                 <!-- Pricing Card 1 -->
                 <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transition-transform duration-300 flex flex-col reveal">
                     <div class="h-48 overflow-hidden relative">
-                        <img src="assets/img/bungee-premium.png" alt="Bungee Trampoline" class="w-full h-full object-cover">
+                        <img src="assets/img/bungee-trampoline.png" alt="Bungee Trampoline" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                     </div>
                     <div class="p-8 flex-grow flex flex-col">
@@ -253,7 +259,7 @@
                 <div class="md:col-span-2 lg:col-span-1 flex justify-center reveal" style="transition-delay: 200ms;">
                     <div class="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl border border-gray-100 dark:border-gray-700 hover:-translate-y-2 transition-transform duration-300 flex flex-col w-full max-w-md lg:max-w-none">
                         <div class="h-48 overflow-hidden relative">
-                            <img src="assets/img/skyzip-premium.png" alt="SkyZip Only" class="w-full h-full object-cover">
+                            <img src="assets/img/skyzip-line.png" alt="SkyZip Only" class="w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
                         <div class="p-8 flex-grow flex flex-col">
@@ -270,10 +276,128 @@
                 </div>
             </div>
         </div>
+    <!-- 3.5 Plan Your Flight (Timings & Eligibility) -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative">
+        <div class="absolute inset-0 overflow-hidden -z-10">
+            <div class="absolute top-1/2 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Visitor Guide</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Plan Your <span class="text-gradient">Flight Details</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Check operating hours, age/height restrictions, and who our experiences are best suited for.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal">
+                <!-- Card 1: Operating Hours -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">Operating Hours</h3>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Monday - Friday</span>
+                            <span class="font-bold text-primary">10:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Saturday - Sunday</span>
+                            <span class="font-bold text-primary">9:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Public Holidays</span>
+                            <span class="font-bold text-purple">9:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-primary/5 rounded-2xl p-4 border border-primary/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-left">
+                            <i class="fa-solid fa-triangle-exclamation text-primary mr-1"></i>
+                            <strong>Note:</strong> Sessions run every 30 minutes. Please arrive 15 minutes before your booked time slot to complete harnessing and briefing.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Bungee Trampoline Details -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-cyan/30 transition-all duration-300 flex flex-col">
+                    <div class="w-14 h-14 bg-cyan/10 rounded-2xl flex items-center justify-center text-cyan text-2xl mb-6">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">Bungee Trampoline</h3>
+                    <div class="space-y-4 flex-grow text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-weight-scale text-cyan w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Weight Range</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">40 lbs - 220 lbs (18 kg - 100 kg)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-user text-cyan w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Minimum Age</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">5 Years old and up</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-heart-pulse text-cyan w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Suitable For</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Kids, teens, and families looking for safe, high-flying flips.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-cyan/5 rounded-2xl p-4 border border-cyan/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-left">
+                            <i class="fa-solid fa-circle-check text-cyan mr-1"></i>
+                            Perfect for developing aerial coordination and gravity-defying tricks in a 100% controlled setting.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 3: SkyZip Line Details -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-purple/30 transition-all duration-300 flex flex-col">
+                    <div class="w-14 h-14 bg-purple/10 rounded-2xl flex items-center justify-center text-purple text-2xl mb-6">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">SkyZip Line</h3>
+                    <div class="space-y-4 flex-grow text-left">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-weight-scale text-purple w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Weight Range</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">60 lbs - 250 lbs (27 kg - 113 kg)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-ruler-vertical text-purple w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Minimum Height</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">48 Inches (4 ft / 122 cm)</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-person-running text-purple w-5 text-center"></i>
+                            <div>
+                                <span class="text-xs text-gray-400 uppercase tracking-wider block">Suitable For</span>
+                                <span class="text-gray-700 dark:text-gray-300 font-medium">Teens, adults, and groups looking for speed, heights, and beautiful views.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-purple/5 rounded-2xl p-4 border border-purple/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-left">
+                            <i class="fa-solid fa-circle-check text-purple mr-1"></i>
+                            Equipped with automated magnetic zipStop braking. High speed, smooth stop, zero user intervention required!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- 4. Safety & Waiver Information -->
-    <section class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+    <section class="py-24 bg-gray-50 dark:bg-charcoal relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row items-center gap-16">
                 <div class="lg:w-1/2 reveal">
@@ -321,6 +445,81 @@
         </div>
     </section>
 
+    <!-- 4.5 Eligibility & Preparation Checklist -->
+    <section class="py-24 bg-gray-50 dark:bg-charcoal relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Visitor Prep</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Are You Ready to <span class="text-gradient">Take Flight?</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto">Verify our quick checklist to ensure you meet all requirements before arriving at the park.</p>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-850 rounded-3xl shadow-xl p-8 border border-gray-100 dark:border-gray-700 reveal" x-data="{ checked1: false, checked2: false, checked3: false, checked4: false }">
+                <div class="space-y-6">
+                    <!-- Item 1 -->
+                    <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-900/50 transition cursor-pointer" @click="checked1 = !checked1">
+                         <div class="flex-shrink-0 mt-1">
+                             <div class="w-6 h-6 rounded-md border-2 flex items-center justify-center transition" :class="checked1 ? 'bg-primary border-primary text-white' : 'border-gray-300 dark:border-gray-600'">
+                                 <i class="fa-solid fa-check text-xs" x-show="checked1"></i>
+                             </div>
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-lg dark:text-white" :class="checked1 ? 'line-through text-gray-400' : ''">Weight Eligibility Check</h4>
+                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">I weigh between 40 lbs and 220 lbs for Bungee Trampolining, or under 250 lbs for the SkyZip Line.</p>
+                         </div>
+                    </div>
+                     
+                    <!-- Item 2 -->
+                    <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-900/50 transition cursor-pointer" @click="checked2 = !checked2">
+                         <div class="flex-shrink-0 mt-1">
+                             <div class="w-6 h-6 rounded-md border-2 flex items-center justify-center transition" :class="checked2 ? 'bg-primary border-primary text-white' : 'border-gray-300 dark:border-gray-600'">
+                                 <i class="fa-solid fa-check text-xs" x-show="checked2"></i>
+                             </div>
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-lg dark:text-white" :class="checked2 ? 'line-through text-gray-400' : ''">Appropriate Footwear</h4>
+                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">I am wearing closed-toe athletic shoes. I understand sandals, flip-flops, and high heels are not allowed on rides.</p>
+                         </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-900/50 transition cursor-pointer" @click="checked3 = !checked3">
+                         <div class="flex-shrink-0 mt-1">
+                             <div class="w-6 h-6 rounded-md border-2 flex items-center justify-center transition" :class="checked3 ? 'bg-primary border-primary text-white' : 'border-gray-300 dark:border-gray-600'">
+                                 <i class="fa-solid fa-check text-xs" x-show="checked3"></i>
+                             </div>
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-lg dark:text-white" :class="checked3 ? 'line-through text-gray-400' : ''">Digital Waiver Completed</h4>
+                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">I have filled out and signed the digital liability release waiver online to speed up check-in.</p>
+                         </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-gray-50 dark:hover:bg-gray-900/50 transition cursor-pointer" @click="checked4 = !checked4">
+                         <div class="flex-shrink-0 mt-1">
+                             <div class="w-6 h-6 rounded-md border-2 flex items-center justify-center transition" :class="checked4 ? 'bg-primary border-primary text-white' : 'border-gray-300 dark:border-gray-600'">
+                                 <i class="fa-solid fa-check text-xs" x-show="checked4"></i>
+                             </div>
+                         </div>
+                         <div>
+                             <h4 class="font-bold text-lg dark:text-white" :class="checked4 ? 'line-through text-gray-400' : ''">Health Compliance</h4>
+                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">I do not have recent neck/back injuries, heart conditions, or pregnancy which would affect safety.</p>
+                         </div>
+                    </div>
+                </div>
+                 
+                <!-- Dynamic completion status message -->
+                <div class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-700 text-center" x-show="checked1 && checked2 && checked3 && checked4" x-cloak x-transition>
+                     <div class="inline-flex items-center gap-2 text-emerald-500 font-bold bg-emerald-500/10 px-6 py-2 rounded-full border border-emerald-500/20">
+                         <i class="fa-solid fa-circle-check"></i> You're Ready to Ride!
+                     </div>
+                     <a href="booking.html" class="block text-primary font-bold hover:text-purple transition mt-4 underline text-sm">Proceed to book your timed slot now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 5. Birthday/Event Packages -->
     <section class="py-24 bg-gradient-to-br from-charcoal to-gray-900 text-white relative">
         <div class="absolute inset-0 overflow-hidden">
@@ -337,7 +536,7 @@
             
             <div class="glass rounded-3xl p-2 md:p-8 border border-white/10 flex flex-col md:flex-row gap-8 items-center reveal">
                 <div class="w-full md:w-1/2 rounded-2xl overflow-hidden h-64 md:h-96">
-                    <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Birthday Party" class="w-full h-full object-cover">
+                    <img src="assets/img/party-package.png" alt="Birthday Party" class="w-full h-full object-cover">
                 </div>
                 <div class="w-full md:w-1/2 p-6">
                     <h3 class="text-3xl font-heading font-bold mb-4">Ultimate Birthday Package</h3>
@@ -349,6 +548,32 @@
                         <li class="flex items-center gap-3"><i class="fa-solid fa-star text-orange"></i> Free jump pass for the birthday child</li>
                     </ul>
                     <a href="contact.html" class="bg-orange hover:bg-orange/80 text-white px-8 py-3 rounded-full font-bold transition inline-block btn-glow">Enquire Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5.5 Thrill Photo Gallery -->
+    <section class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-purple font-bold tracking-wider uppercase text-sm mb-2 block">Social Proof</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Our Gallery of <span class="text-gradient">Thrill Seekers</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Real smiles, real flights, and unforgettable moments captured live at the park.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 reveal">
+                <div class="rounded-3xl overflow-hidden h-72 shadow-lg hover:scale-[1.02] transition duration-300">
+                    <img src="assets/img/gallery-bungee-jump.png" alt="Happy child flipping on bungee trampoline" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-3xl overflow-hidden h-72 shadow-lg hover:scale-[1.02] transition duration-300 md:translate-y-4">
+                    <img src="assets/img/gallery-zip-line.png" alt="Person ziplining above forest canopy" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-3xl overflow-hidden h-72 shadow-lg hover:scale-[1.02] transition duration-300">
+                    <img src="assets/img/gallery-bungee-flip.png" alt="Youth performing mid-air flip on bungee trampoline" class="w-full h-full object-cover">
+                </div>
+                <div class="rounded-3xl overflow-hidden h-72 shadow-lg hover:scale-[1.02] transition duration-300 md:translate-y-4">
+                    <img src="assets/img/gallery-happy-flyer.png" alt="Happy visitors celebrating at the adventure park" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>

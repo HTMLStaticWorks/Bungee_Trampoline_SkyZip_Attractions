@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
             html.setAttribute('dir', 'rtl');
             localStorage.dir = 'rtl';
             rtlToggleBtns.forEach(btn => {
-                btn.innerHTML = '<span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">LTR</span>';
+                btn.innerHTML = '<span class="text-xs font-bold">LTR</span>';
             });
         } else {
             html.setAttribute('dir', 'ltr');
             localStorage.dir = 'ltr';
             rtlToggleBtns.forEach(btn => {
-                btn.innerHTML = '<span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>';
+                btn.innerHTML = '<span class="text-xs font-bold">RTL</span>';
             });
         }
     };

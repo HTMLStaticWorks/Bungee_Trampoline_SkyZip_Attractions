@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | SkyZip & Bungee Trampoline</title>
+    <title>Experiences & Attractions | SkyZip & Bungee Trampoline</title>
+    <meta name="description" content="Discover heart-pounding Bungee Trampoline and SkyZip Line experiences at SkyZip & Bungee Trampoline Attractions. Safe, thrilling, and unforgettable adventures for all ages.">
     <link rel="icon" type="image/png" href="assets/img/favicon.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -50,7 +51,7 @@
                     <a href="contact.html" class="hover:text-primary transition font-semibold font-sora">Contact</a>
                     
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
-                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
 
                     <button class="theme-toggle hover:text-primary transition text-xl">
@@ -64,7 +65,7 @@
                 <!-- Mobile Menu Button -->
                 <div class="lg:hidden flex items-center gap-4">
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
-                        <span class="text-xs font-bold px-2 py-1 bg-primary/10 rounded-lg">RTL</span>
+                        <span class="text-xs font-bold">RTL</span>
                     </button>
 
                     <button class="theme-toggle hover:text-primary transition text-xl">
@@ -101,34 +102,703 @@
     </nav>
 
     <!-- 1. Service Hero Banner -->
-    <section class="py-40 relative overflow-hidden flex items-center justify-center text-white text-center hero-bg" style="background-image: url('https://images.unsplash.com/photo-1601662528567-526cd06f6582?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+    <section class="py-40 relative overflow-hidden flex items-center justify-center text-white text-center hero-bg" style="background-image: url('assets/img/services-hero.png');">
         <!-- Overlay -->
         <div class="absolute inset-0 z-0 overlay-dark"></div>
 
         <div class="max-w-4xl mx-auto px-4 reveal relative z-10">
             <h1 class="text-6xl md:text-7xl font-heading font-extrabold mb-6 text-shadow-lg leading-tight">Our <span class="text-primary">Attractions</span></h1>
-            <p class="text-xl md:text-2xl text-gray-200 font-light max-w-2xl mx-auto text-shadow-lg">Discover heart-pounding adventures designed for all thrill levels.</p>
+            <p class="text-xl md:text-2xl text-gray-200 font-light max-w-2xl mx-auto text-shadow-lg">Discover heart-pounding adventures designed for all thrill levels — from gravity-defying aerial flips to high-speed zip line rides above the park.</p>
+            <div class="flex flex-wrap justify-center gap-6 mt-10">
+                <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-semibold">
+                    <i class="fa-solid fa-shield-halved text-primary"></i> 100% Safety Certified
+                </div>
+                <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-semibold">
+                    <i class="fa-solid fa-users text-cyan"></i> Suitable for All Ages
+                </div>
+                <div class="flex items-center gap-2 bg-white/10 backdrop-blur-sm px-5 py-2.5 rounded-full text-sm font-semibold">
+                    <i class="fa-solid fa-star text-yellow-400"></i> 4.9★ Rated Experience
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- 2. Attraction Grid -->
-    <section class="py-20 bg-white dark:bg-gray-900">
+    <!-- 2. Detailed Attraction Experiences -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative overflow-hidden">
+        <!-- Floating decorative blobs for modern aesthetic -->
+        <div class="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-purple/5 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12">
-                <!-- Service 1 -->
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl reveal border border-gray-200 dark:border-gray-700">
-                    <img src="assets/img/bungee-trampoline.png" alt="Bungee" class="w-full h-64 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-3xl font-heading font-bold mb-4 dark:text-white">Bungee Trampoline</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Experience the sensation of zero gravity! Safe for kids and adults, perform flips up to 25 feet in the air.</p>
+            <!-- Section Header -->
+            <div class="text-center mb-20 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Choose Your Ride</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-extrabold mb-4 dark:text-white">Our Dedicated <span class="text-gradient">Experiences</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Compare our two world-class attractions, check specs and eligibility, and pick the perfect adventure for your group.</p>
+            </div>
+
+            <!-- Bungee Trampoline Dedicated Section -->
+            <div class="grid lg:grid-cols-12 gap-12 items-center mb-32 reveal" id="bungee-experience">
+                <!-- Visual Container (Cols 1-6) -->
+                <div class="lg:col-span-6 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group border border-gray-100 dark:border-gray-800">
+                        <img src="assets/img/bungee-trampoline.png" alt="Bungee Trampoline Experience" class="w-full h-[400px] sm:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <!-- Floating Info Tag -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/80 dark:bg-gray-900/85 backdrop-blur-md p-6 rounded-2xl border border-white/20 dark:border-gray-800/50 flex justify-between items-center shadow-xl">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-primary">Vertical Flight</span>
+                                <h4 class="font-heading font-bold text-xl text-gray-900 dark:text-white">Up to 25ft Vertically</h4>
+                            </div>
+                            <span class="bg-primary/10 text-primary border border-primary/20 dark:bg-primary/20 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Safe &amp; Certified</span>
+                        </div>
+                    </div>
+                    <!-- Secondary detail bubble (absolute positioned decoration) -->
+                    <div class="hidden sm:block absolute -top-8 -right-8 w-40 h-40 rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-gray-900 rotate-6 hover:rotate-0 transition-transform duration-300">
+                        <img src="assets/img/bungee-premium.png" alt="Premium Harness" class="w-full h-full object-cover">
                     </div>
                 </div>
-                <!-- Service 2 -->
-                <div class="bg-gray-50 dark:bg-gray-800 rounded-3xl overflow-hidden shadow-xl reveal border border-gray-200 dark:border-gray-700">
-                    <img src="assets/img/skyzip-line.png" alt="SkyZip" class="w-full h-64 object-cover">
-                    <div class="p-8">
-                        <h3 class="text-3xl font-heading font-bold mb-4 dark:text-white">SkyZip Line</h3>
-                        <p class="text-gray-600 dark:text-gray-400 mb-6">Soar horizontally over the park. High speeds, stunning views, and an adrenaline rush like no other.</p>
+
+                <!-- Content Container (Cols 7-12) -->
+                <div class="lg:col-span-6 space-y-6">
+                    <span class="inline-flex items-center gap-1.5 bg-primary/10 text-primary text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                        <i class="fa-solid fa-bounce text-[10px]"></i> Fan Favourite attraction
+                    </span>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-bold dark:text-white leading-tight">Bungee Trampoline <br><span class="text-gradient">Defy Gravity Safely</span></h3>
+                    
+                    <p class="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
+                        Experience the thrilling sensation of zero-gravity acrobatics! Securely strapped into a customized professional harness, our industrial-strength bungee cords adapt to your weight and assist your jumps. You will soar up to <strong>25 feet in the air</strong>, allowing you to perform safe front flips, backflips, and aerial tricks.
+                    </p>
+
+                    <!-- What you can expect grid -->
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">What to Expect</h4>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <i class="fa-solid fa-user-astronaut text-primary text-lg mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-sm dark:text-white block">Weightless Feeling</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Perform flips easily with cord-assisted jumps.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <i class="fa-solid fa-clipboard-check text-primary text-lg mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-sm dark:text-white block">Who can Ride?</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Ages 5+ (Weight range: 40 - 220 lbs).</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <i class="fa-solid fa-stopwatch text-primary text-lg mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-sm dark:text-white block">Session Duration</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">15 minutes of pure jumping and flip time.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <i class="fa-solid fa-shield-cat text-primary text-lg mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-sm dark:text-white block">Safety Standards</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Dual-clip safety harness &amp; trained instructors.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing and Action Details -->
+                    <div class="border-t border-gray-100 dark:border-gray-800 pt-6 flex flex-wrap items-center justify-between gap-6">
+                        <div>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Standard Ticket</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-heading font-extrabold text-primary">$25</span>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">/ 15-minute slot</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="bungee-details.html" class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold px-6 py-3.5 rounded-full text-sm transition">View Details</a>
+                            <a href="booking.html" class="bg-gradient-to-r from-primary to-cyan hover:from-cyan hover:to-primary text-white font-bold px-8 py-3.5 rounded-full text-sm transition btn-glow shadow-lg shadow-primary/20">Book Bungee</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SkyZip Line Dedicated Section (Alternating layout: image on the right, content on the left) -->
+            <div class="grid lg:grid-cols-12 gap-12 items-center reveal" id="skyzip-experience">
+                <!-- Content Container (Cols 1-6) - Order 2 on desktop to push it left -->
+                <div class="lg:col-span-6 lg:order-1 space-y-6">
+                    <span class="inline-flex items-center gap-1.5 bg-purple/10 text-purple text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+                        <i class="fa-solid fa-gauge-high text-[10px]"></i> Most Thrilling attraction
+                    </span>
+                    <h3 class="text-3xl sm:text-4xl font-heading font-bold dark:text-white leading-tight">SkyZip Line <br><span class="text-gradient">Soar Above the Canopy</span></h3>
+                    
+                    <p class="text-gray-600 dark:text-gray-400 text-base sm:text-lg leading-relaxed">
+                        Strap in and prepare for high-speed horizontal flight! Suspended in a professional harness, you'll slide down a <strong>500-foot high-tensile steel cable</strong> at speeds reaching up to <strong>35 MPH</strong>. Take in the beautiful, breathtaking views of the entire park, knowing you are secured by double safety backup systems and the state-of-the-art <strong>zipStop® automatic magnetic brakes</strong>.
+                    </p>
+
+                    <!-- What you can expect grid -->
+                    <div>
+                        <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wider mb-3">What to Expect</h4>
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div class="flex items-start gap-3 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <i class="fa-solid fa-wind text-purple text-lg mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-sm dark:text-white block">Adrenaline Rush</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Glide horizontally up to 35 MPH over the trees.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <i class="fa-solid fa-ruler-vertical text-purple text-lg mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-sm dark:text-white block">Who can Ride?</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Ages 8+ (Height min: 4ft / weight max: 250 lbs).</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <i class="fa-solid fa-tree text-purple text-lg mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-sm dark:text-white block">Scenic Panorama</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">Amazing aerial bird's-eye views of the park.</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-100 dark:border-gray-800">
+                                <i class="fa-solid fa-magnet text-purple text-lg mt-0.5"></i>
+                                <div>
+                                    <span class="font-bold text-sm dark:text-white block">Auto Braking</span>
+                                    <span class="text-xs text-gray-500 dark:text-gray-400">zipStop® auto brakes ensure a smooth landing.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing and Action Details -->
+                    <div class="border-t border-gray-100 dark:border-gray-800 pt-6 flex flex-wrap items-center justify-between gap-6">
+                        <div>
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Single Pass Ticket</span>
+                            <div class="flex items-baseline gap-1">
+                                <span class="text-3xl font-heading font-extrabold text-purple">$30</span>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">/ single flight run</span>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <a href="skyzip-details.html" class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-white font-bold px-6 py-3.5 rounded-full text-sm transition">View Details</a>
+                            <a href="booking.html" class="bg-gradient-to-r from-purple to-pink-500 hover:from-pink-500 hover:to-purple text-white font-bold px-8 py-3.5 rounded-full text-sm transition btn-glow shadow-lg shadow-purple/20">Book SkyZip</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Container (Cols 7-12) - Order 1 on mobile, order 2 on desktop to push it right -->
+                <div class="lg:col-span-6 lg:order-2 relative">
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl group border border-gray-100 dark:border-gray-800">
+                        <img src="assets/img/skyzip-line.png" alt="SkyZip Line Experience" class="w-full h-[400px] sm:h-[480px] object-cover group-hover:scale-105 transition-transform duration-700">
+                        <!-- Floating Info Tag -->
+                        <div class="absolute bottom-6 left-6 right-6 bg-white/80 dark:bg-gray-900/85 backdrop-blur-md p-6 rounded-2xl border border-white/20 dark:border-gray-800/50 flex justify-between items-center shadow-xl">
+                            <div>
+                                <span class="text-xs font-bold uppercase tracking-wider text-purple">Speed Flight</span>
+                                <h4 class="font-heading font-bold text-xl text-gray-900 dark:text-white">Up to 35 MPH</h4>
+                            </div>
+                            <span class="bg-purple/10 text-purple border border-purple/20 dark:bg-purple/20 px-3 py-1.5 rounded-full text-xs font-bold uppercase tracking-wider">Hands-Free Stop</span>
+                        </div>
+                    </div>
+                    <!-- Secondary detail bubble (absolute positioned decoration) -->
+                    <div class="hidden sm:block absolute -bottom-8 -left-8 w-40 h-40 rounded-2xl overflow-hidden shadow-xl border-4 border-white dark:border-gray-900 -rotate-6 hover:rotate-0 transition-transform duration-300">
+                        <img src="assets/img/skyzip-premium.png" alt="Premium zipStop Brakes" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WEIGHT / ELIGIBILITY CALCULATOR ===== -->
+    <section class="py-24 bg-gray-50 dark:bg-charcoal relative overflow-hidden" id="weight-checker">
+        <!-- Background Decoration -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple/5 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
+             x-data="{
+                weight: '',
+                unit: 'lbs',
+                get weightLbs() {
+                    if (!this.weight || isNaN(this.weight) || +this.weight <= 0) return null;
+                    return this.unit === 'lbs' ? +this.weight : Math.round(+this.weight * 2.20462);
+                },
+                get weightKg() {
+                    if (!this.weight || isNaN(this.weight) || +this.weight <= 0) return null;
+                    return this.unit === 'kg' ? +this.weight : Math.round(+this.weight / 2.20462);
+                },
+                get bungeeFit() {
+                    const w = this.weightLbs;
+                    if (w === null) return null;
+                    return w >= 40 && w <= 220;
+                },
+                get skyzipFit() {
+                    const w = this.weightLbs;
+                    if (w === null) return null;
+                    return w >= 60 && w <= 250;
+                },
+                get hasResult() {
+                    return this.weightLbs !== null;
+                },
+                get bothFit() {
+                    return this.bungeeFit && this.skyzipFit;
+                },
+                get onlyBungee() {
+                    return this.bungeeFit && !this.skyzipFit;
+                },
+                get onlyZip() {
+                    return !this.bungeeFit && this.skyzipFit;
+                },
+                get neitherFit() {
+                    return !this.bungeeFit && !this.skyzipFit;
+                }
+             }">
+
+            <!-- Header -->
+            <div class="text-center mb-12 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Quick Eligibility Check</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-extrabold mb-4 dark:text-white">Weight <span class="text-gradient">Eligibility Calculator</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-lg">Enter your weight below to instantly see which attractions you can ride. Simple, fast, and secure.</p>
+            </div>
+
+            <!-- Calculator Card -->
+            <div class="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-100 dark:border-gray-700 overflow-hidden reveal">
+                <!-- Weight Limits Reference Bar -->
+                <div class="bg-gradient-to-r from-primary/10 via-transparent to-purple/10 border-b border-gray-100 dark:border-gray-700 px-8 py-5">
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-6 text-sm">
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 rounded-full bg-primary flex-shrink-0"></div>
+                            <span class="text-gray-600 dark:text-gray-300"><strong class="text-gray-900 dark:text-white">Bungee Trampoline:</strong> 40 – 220 lbs (18 – 100 kg)</span>
+                        </div>
+                        <div class="hidden sm:block w-px h-4 bg-gray-200 dark:bg-gray-600"></div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-3 h-3 rounded-full bg-purple flex-shrink-0"></div>
+                            <span class="text-gray-600 dark:text-gray-300"><strong class="text-gray-900 dark:text-white">SkyZip Line:</strong> 60 – 250 lbs (27 – 113 kg)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="px-8 py-10">
+                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 max-w-xl mx-auto">
+                        <!-- Unit Toggle -->
+                        <div class="flex rounded-xl overflow-hidden border border-gray-200 dark:border-gray-600 flex-shrink-0">
+                            <button @click="unit = 'lbs'; weight = ''"
+                                    :class="unit === 'lbs' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'"
+                                    class="px-5 py-3 font-bold text-sm transition-all duration-200 focus:outline-none">
+                                lbs
+                            </button>
+                            <button @click="unit = 'kg'; weight = ''"
+                                    :class="unit === 'kg' ? 'bg-primary text-white' : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-700'"
+                                    class="px-5 py-3 font-bold text-sm transition-all duration-200 focus:outline-none border-l border-gray-200 dark:border-gray-600">
+                                kg
+                            </button>
+                        </div>
+
+                        <!-- Weight Input -->
+                        <div class="relative flex-1">
+                            <input type="number"
+                                   x-model="weight"
+                                   :placeholder="unit === 'lbs' ? 'Enter weight in lbs...' : 'Enter weight in kg...'"
+                                   min="1"
+                                   max="500"
+                                   id="weight-input"
+                                   class="w-full bg-gray-50 dark:bg-gray-700/60 border-2 border-gray-200 dark:border-gray-600 rounded-xl px-5 py-3.5 text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 text-lg font-semibold"
+                            >
+                            <div class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 font-bold text-sm pointer-events-none" x-text="unit"></div>
+                        </div>
+
+                        <!-- Clear Button -->
+                        <button @click="weight = ''"
+                                x-show="weight !== ''"
+                                x-transition
+                                class="flex-shrink-0 w-12 h-12 rounded-xl border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 flex items-center justify-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 transition-all duration-200 focus:outline-none"
+                                title="Clear">
+                            <i class="fa-solid fa-xmark text-lg"></i>
+                        </button>
+                    </div>
+
+                    <!-- Converted Weight Display -->
+                    <div x-show="hasResult" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" class="text-center mt-4 text-sm text-gray-500 dark:text-gray-400">
+                        <template x-if="unit === 'lbs' && weightKg !== null">
+                            <span>That's approximately <strong class="text-gray-700 dark:text-gray-200" x-text="weightKg + ' kg'"></strong></span>
+                        </template>
+                        <template x-if="unit === 'kg' && weightLbs !== null">
+                            <span>That's approximately <strong class="text-gray-700 dark:text-gray-200" x-text="weightLbs + ' lbs'"></strong></span>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Results Area -->
+                <div x-show="hasResult"
+                     x-transition:enter="transition ease-out duration-500"
+                     x-transition:enter-start="opacity-0 -translate-y-4"
+                     x-transition:enter-end="opacity-100 translate-y-0"
+                     class="px-8 pb-10 space-y-4"
+                     x-cloak>
+
+                    <!-- Summary Banner -->
+                    <template x-if="bothFit">
+                        <div class="flex items-center gap-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-2xl p-5">
+                            <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-party-horn text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-green-800 dark:text-green-300 text-lg font-heading">You're eligible for BOTH rides! 🎉</h4>
+                                <p class="text-green-700 dark:text-green-400 text-sm">Great news — you can enjoy the Bungee Trampoline and the SkyZip Line. Consider our Combo Pass for the best value!</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-if="onlyBungee">
+                        <div class="flex items-center gap-4 bg-sky-50 dark:bg-sky-900/20 border border-sky-200 dark:border-sky-800 rounded-2xl p-5">
+                            <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-circle-info text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sky-800 dark:text-sky-300 text-lg font-heading">Eligible for Bungee Trampoline only</h4>
+                                <p class="text-sky-700 dark:text-sky-400 text-sm">Your weight qualifies for the Bungee Trampoline (40–220 lbs). The SkyZip Line requires a minimum of 60 lbs.</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-if="onlyZip">
+                        <div class="flex items-center gap-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800 rounded-2xl p-5">
+                            <div class="w-12 h-12 bg-purple rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-circle-info text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-purple-800 dark:text-purple-300 text-lg font-heading">Eligible for SkyZip Line only</h4>
+                                <p class="text-purple-700 dark:text-purple-400 text-sm">Your weight qualifies for the SkyZip Line (60–250 lbs). The Bungee Trampoline has a maximum limit of 220 lbs.</p>
+                            </div>
+                        </div>
+                    </template>
+                    <template x-if="neitherFit">
+                        <div class="flex items-center gap-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-2xl p-5">
+                            <div class="w-12 h-12 bg-red-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i class="fa-solid fa-triangle-exclamation text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-red-800 dark:text-red-300 text-lg font-heading">Outside the weight range for both rides</h4>
+                                <p class="text-red-700 dark:text-red-400 text-sm">Unfortunately, our rides require weights between 40–250 lbs (18–113 kg). Please contact us if you have questions.</p>
+                            </div>
+                        </div>
+                    </template>
+
+                    <!-- Ride-by-Ride Result Cards -->
+                    <div class="grid sm:grid-cols-2 gap-4 mt-6">
+                        <!-- Bungee Card -->
+                        <div :class="bungeeFit ? 'border-primary/40 bg-primary/5 dark:bg-primary/10' : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 opacity-60'"
+                             class="rounded-2xl border-2 p-5 transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div :class="bungeeFit ? 'bg-primary text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500'"
+                                     class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                                    <i class="fa-solid fa-bolt text-lg"></i>
+                                </div>
+                                <h4 class="font-heading font-bold dark:text-white text-base">Bungee Trampoline</h4>
+                            </div>
+                            <div class="space-y-1.5 text-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-500 dark:text-gray-400">Required range</span>
+                                    <span class="font-semibold text-gray-700 dark:text-gray-300">40 – 220 lbs</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-500 dark:text-gray-400">Your weight</span>
+                                    <span class="font-bold text-lg" :class="bungeeFit ? 'text-primary' : 'text-red-500'" x-text="weightLbs + ' lbs'"></span>
+                                </div>
+                            </div>
+                            <div class="mt-3 flex items-center gap-2">
+                                <template x-if="bungeeFit">
+                                    <span class="flex items-center gap-1.5 text-green-600 dark:text-green-400 font-bold text-sm">
+                                        <i class="fa-solid fa-circle-check"></i> You're eligible!
+                                    </span>
+                                </template>
+                                <template x-if="!bungeeFit">
+                                    <span class="flex items-center gap-1.5 text-red-500 font-bold text-sm">
+                                        <i class="fa-solid fa-circle-xmark"></i> Not eligible
+                                    </span>
+                                </template>
+                            </div>
+                        </div>
+
+                        <!-- SkyZip Card -->
+                        <div :class="skyzipFit ? 'border-purple/40 bg-purple/5 dark:bg-purple/10' : 'border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-800/50 opacity-60'"
+                             class="rounded-2xl border-2 p-5 transition-all duration-300">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div :class="skyzipFit ? 'bg-purple text-white' : 'bg-gray-200 dark:bg-gray-700 text-gray-400 dark:text-gray-500'"
+                                     class="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300">
+                                    <i class="fa-solid fa-feather-pointed text-lg"></i>
+                                </div>
+                                <h4 class="font-heading font-bold dark:text-white text-base">SkyZip Line</h4>
+                            </div>
+                            <div class="space-y-1.5 text-sm">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-500 dark:text-gray-400">Required range</span>
+                                    <span class="font-semibold text-gray-700 dark:text-gray-300">60 – 250 lbs</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-gray-500 dark:text-gray-400">Your weight</span>
+                                    <span class="font-bold text-lg" :class="skyzipFit ? 'text-purple' : 'text-red-500'" x-text="weightLbs + ' lbs'"></span>
+                                </div>
+                            </div>
+                            <div class="mt-3 flex items-center gap-2">
+                                <template x-if="skyzipFit">
+                                    <span class="flex items-center gap-1.5 text-green-600 dark:text-green-400 font-bold text-sm">
+                                        <i class="fa-solid fa-circle-check"></i> You're eligible!
+                                    </span>
+                                </template>
+                                <template x-if="!skyzipFit">
+                                    <span class="flex items-center gap-1.5 text-red-500 font-bold text-sm">
+                                        <i class="fa-solid fa-circle-xmark"></i> Not eligible
+                                    </span>
+                                </template>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div x-show="bungeeFit || skyzipFit" class="flex flex-wrap justify-center gap-3 pt-4">
+                        <a href="booking.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-purple hover:from-purple hover:to-primary text-white font-bold px-8 py-3.5 rounded-full transition shadow-lg shadow-primary/20 btn-glow text-sm">
+                            <i class="fa-solid fa-ticket"></i> Book Your Eligible Ride
+                        </a>
+                        <a href="contact.html" class="inline-flex items-center gap-2 border-2 border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 hover:border-primary hover:text-primary font-bold px-6 py-3.5 rounded-full transition text-sm">
+                            <i class="fa-solid fa-headset"></i> Questions? Contact Us
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Disclaimer -->
+                <div class="border-t border-gray-100 dark:border-gray-700 px-8 py-4 bg-gray-50/50 dark:bg-gray-800/30">
+                    <p class="text-xs text-gray-400 dark:text-gray-500 text-center leading-relaxed">
+                        <i class="fa-solid fa-circle-info mr-1"></i>
+                        This calculator is a guide only. Final eligibility is confirmed on arrival by our trained staff. Riders may also be assessed on height, fitness, and health conditions. All weight limits are for rider safety and are strictly enforced.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Numbers Banner -->
+    <section class="py-16 bg-gradient-to-r from-primary to-purple text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10" style="background-image: url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\"); background-size: 30px;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="reveal">
+                    <div class="text-5xl font-heading font-extrabold mb-2">25<span class="text-yellow-300">ft</span></div>
+                    <div class="text-white/80 font-medium text-sm uppercase tracking-wider">Max Bungee Height</div>
+                </div>
+                <div class="reveal">
+                    <div class="text-5xl font-heading font-extrabold mb-2">50<span class="text-yellow-300">k+</span></div>
+                    <div class="text-white/80 font-medium text-sm uppercase tracking-wider">Rides Completed</div>
+                </div>
+                <div class="reveal">
+                    <div class="text-5xl font-heading font-extrabold mb-2">4.9<span class="text-yellow-300">★</span></div>
+                    <div class="text-white/80 font-medium text-sm uppercase tracking-wider">Average Guest Rating</div>
+                </div>
+                <div class="reveal">
+                    <div class="text-5xl font-heading font-extrabold mb-2">0<span class="text-yellow-300">%</span></div>
+                    <div class="text-white/80 font-medium text-sm uppercase tracking-wider">Injury Record</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-24 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Our Promise</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Why Riders <span class="text-gradient">Choose Us</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">We don't just operate rides — we engineer unforgettable moments built on trust, technology, and world-class safety standards.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+                <div class="group p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-center">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 mx-auto">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white font-heading">Industry-Leading Safety</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">All our equipment meets or exceeds ASTM international amusement ride standards. Every harness, bungee cord, and zip trolley is inspected by certified technicians before every single operating day. Safety is non-negotiable here.</p>
+                </div>
+                <div class="group p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-cyan/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-center">
+                    <div class="w-14 h-14 bg-cyan/10 rounded-2xl flex items-center justify-center text-cyan text-2xl mb-6 group-hover:bg-cyan group-hover:text-white transition-all duration-300 mx-auto">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white font-heading">Expert Certified Staff</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Our instructors are trained and certified in both ride operations and first aid. They guide every rider through a personalised safety briefing and remain attentive throughout the session, ready to assist and encourage participants of all skill levels.</p>
+                </div>
+                <div class="group p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-purple/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-center">
+                    <div class="w-14 h-14 bg-purple/10 rounded-2xl flex items-center justify-center text-purple text-2xl mb-6 group-hover:bg-purple group-hover:text-white transition-all duration-300 mx-auto">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white font-heading">All Ages Welcome</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">From excited 5-year-olds on the Bungee Trampoline to competitive adults on the SkyZip Line, our attractions are designed with flexibility in mind. Family groups, school trips, birthday parties, and corporate teams are all catered for.</p>
+                </div>
+                <div class="group p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-orange/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-center">
+                    <div class="w-14 h-14 bg-orange/10 rounded-2xl flex items-center justify-center text-orange text-2xl mb-6 group-hover:bg-orange group-hover:text-white transition-all duration-300 mx-auto">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white font-heading">Easy Online Booking</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Skip the queue entirely. Our streamlined online booking system lets you choose your experience, select a time slot, complete your digital waiver, and pay — all before you arrive. Instant confirmation, zero hassle.</p>
+                </div>
+                <div class="group p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-primary/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-center">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300 mx-auto">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white font-heading">Advanced Equipment</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">We invest in the very best ride technology. The SkyZip features the renowned zipStop® eddy-current magnetic braking system — the same technology used in top-tier adventure parks worldwide. Smooth, reliable, and completely hands-free.</p>
+                </div>
+                <div class="group p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:border-cyan/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-gray-50 dark:bg-gray-800 text-center">
+                    <div class="w-14 h-14 bg-cyan/10 rounded-2xl flex items-center justify-center text-cyan text-2xl mb-6 group-hover:bg-cyan group-hover:text-white transition-all duration-300 mx-auto">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 dark:text-white font-heading">Memory-Making Moments</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Bring your camera or have our team capture your ride! Spectators enjoy free entry to dedicated viewing zones, and our photo-friendly setup means you'll leave with incredible content to share. Every ride is an unforgettable story.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2.5 What to Expect / Prep Timeline -->
+    <section class="py-24 bg-gray-50 dark:bg-charcoal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Preparation Guide</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">What to Expect <span class="text-gradient">On Your Visit</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-lg">Follow our quick preparation checklist to ensure a seamless, stress-free experience from the moment you arrive to the moment you take off into the sky.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 reveal">
+                <!-- Step 1 -->
+                <div class="text-center relative">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 mx-auto shadow-lg shadow-primary/20">1</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white font-heading">Book Online First</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Reserve your timed slot online to skip the queue entirely. Pre-booking guarantees your session and lets you complete your digital safety waiver before arriving — so you spend less time waiting and more time flying.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="text-center relative">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 mx-auto shadow-lg shadow-primary/20">2</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white font-heading">Wear Right Clothes</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Dress for action — comfortable, form-fitting activewear and close-toed athletic shoes are mandatory for all riders. Avoid skirts, dresses, open-toed shoes, or loose jewelry that could get caught in the harness.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="text-center relative">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 mx-auto shadow-lg shadow-primary/20">3</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white font-heading">Check-in On Time</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Arrive at least 15 minutes before your session begins. Our friendly reception team will verify your waiver, scan your booking confirmation, and direct you to your attraction zone — quick and seamless every time.</p>
+                </div>
+                <!-- Step 4 -->
+                <div class="text-center relative">
+                    <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center text-xl font-bold font-heading mb-6 mx-auto shadow-lg shadow-primary/20">4</div>
+                    <h3 class="text-xl font-bold mb-2 dark:text-white font-heading">Harness & Fly</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Your instructor will fit your full-body harness, perform a mandatory double-check, walk you through your personalised safety briefing, and then launch you into the best moments of your day. The thrill begins!</p>
+                </div>
+            </div>
+        </div>
+        <!-- Extra note below steps -->
+        <div class="max-w-3xl mx-auto px-4 mt-12 reveal">
+            <div class="bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-2xl p-6 flex items-start gap-4">
+                <i class="fa-solid fa-circle-info text-primary text-2xl mt-1"></i>
+                <div>
+                    <h4 class="font-bold dark:text-white mb-1">First Time Here?</h4>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Don't worry — every visit starts with a personalized safety orientation from one of our certified instructors. We walk first-timers through everything from harness fitting to basic technique, so you feel completely confident before you leave the ground. No prior experience necessary.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 2.6 Plan Your Flight (Timings & Eligibility) -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative">
+        <div class="absolute inset-0 overflow-hidden -z-10">
+            <div class="absolute top-1/2 left-1/4 w-72 h-72 bg-primary/5 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-purple/5 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Visitor Guide</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Plan Your <span class="text-gradient">Flight Details</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Check operating hours, age/height restrictions, and who our experiences are best suited for.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal">
+                <!-- Card 1: Operating Hours -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-primary/30 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">Operating Hours</h3>
+                    <div class="space-y-4 flex-grow">
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Monday - Friday</span>
+                            <span class="font-bold text-primary">10:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Saturday - Sunday</span>
+                            <span class="font-bold text-primary">9:00 AM - 10:00 PM</span>
+                        </div>
+                        <div class="flex justify-between items-center pb-3 border-b border-gray-100 dark:border-gray-800">
+                            <span class="text-gray-600 dark:text-gray-400 font-medium">Public Holidays</span>
+                            <span class="font-bold text-purple">9:00 AM - 8:00 PM</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-primary/5 rounded-2xl p-4 border border-primary/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-center">
+                            <i class="fa-solid fa-triangle-exclamation text-primary mr-1"></i>
+                            <strong>Note:</strong> Sessions run every 30 minutes. Please arrive 15 minutes before your booked time slot to complete harnessing and briefing.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 2: Bungee Trampoline Details -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-cyan/30 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-14 h-14 bg-cyan/10 rounded-2xl flex items-center justify-center text-cyan text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">Bungee Trampoline</h3>
+                    <div class="space-y-4 flex-grow text-center">
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Weight Range</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">40 lbs - 220 lbs (18 kg - 100 kg)</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Minimum Age</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">5 Years old and up</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Suitable For</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">Kids, teens, and families looking for safe, high-flying flips.</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-cyan/5 rounded-2xl p-4 border border-cyan/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-center">
+                            <i class="fa-solid fa-circle-check text-cyan mr-1"></i>
+                            Perfect for developing aerial coordination and gravity-defying tricks in a 100% controlled setting.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Card 3: SkyZip Line Details -->
+                <div class="glass p-8 rounded-3xl border border-gray-100 dark:border-gray-800 shadow-xl hover:border-purple/30 transition-all duration-300 flex flex-col text-center">
+                    <div class="w-14 h-14 bg-purple/10 rounded-2xl flex items-center justify-center text-purple text-2xl mb-6 mx-auto">
+                        <i class="fa-solid fa-feather-pointed"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold dark:text-white mb-4 font-heading">SkyZip Line</h3>
+                    <div class="space-y-4 flex-grow text-center">
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Weight Range</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">60 lbs - 250 lbs (27 kg - 113 kg)</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Minimum Height</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">48 Inches (4 ft / 122 cm)</span>
+                        </div>
+                        <div class="flex flex-col items-center gap-1">
+                            <span class="text-xs text-gray-400 uppercase tracking-wider block">Suitable For</span>
+                            <span class="text-gray-700 dark:text-gray-300 font-medium">Teens, adults, and groups looking for speed, heights, and beautiful views.</span>
+                        </div>
+                    </div>
+                    <div class="mt-6 bg-purple/5 rounded-2xl p-4 border border-purple/10">
+                        <p class="text-xs text-gray-500 dark:text-gray-400 leading-relaxed text-center">
+                            <i class="fa-solid fa-circle-check text-purple mr-1"></i>
+                            Equipped with automated magnetic zipStop braking. High speed, smooth stop, zero user intervention required!
+                        </p>
                     </div>
                 </div>
             </div>
@@ -170,27 +840,59 @@
         </div>
     </section>
 
+    <!-- Adventure Highlights Strip -->
+    <section class="py-16 bg-charcoal text-white relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-purple/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2 reveal">
+                    <span class="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Group & Private Events</span>
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 leading-snug">Take Your Event to <span class="text-primary">New Heights</span></h2>
+                    <p class="text-gray-300 mb-4 leading-relaxed">Looking for a birthday party venue, team-building day, or school excursion that no one will ever forget? Our private hire packages let your group have exclusive access to our attractions, with dedicated staff, customisable durations, and add-on options like event photography and on-site catering.</p>
+                    <p class="text-gray-400 text-sm mb-6">Packages are fully customisable for groups of 10 to 200+ participants. We handle the logistics — you just bring the excitement.</p>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-full text-sm"><i class="fa-solid fa-cake-candles text-primary"></i> Birthday Parties</span>
+                        <span class="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-full text-sm"><i class="fa-solid fa-briefcase text-cyan"></i> Corporate Events</span>
+                        <span class="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-full text-sm"><i class="fa-solid fa-school text-purple"></i> School Trips</span>
+                        <span class="flex items-center gap-2 bg-gray-800 px-4 py-2 rounded-full text-sm"><i class="fa-solid fa-users text-orange"></i> Community Groups</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-4 reveal">
+                    <a href="pricing.html#birthday" class="block bg-gradient-to-r from-primary to-cyan text-white text-center font-bold py-4 px-6 rounded-2xl hover:from-cyan hover:to-primary transition shadow-lg shadow-primary/30">
+                        <i class="fa-solid fa-gift mr-2"></i> View Birthday Packages
+                    </a>
+                    <a href="contact.html" class="block bg-gray-800 hover:bg-gray-700 text-white text-center font-bold py-4 px-6 rounded-2xl transition border border-gray-700 hover:border-gray-600">
+                        <i class="fa-solid fa-headset mr-2"></i> Contact Us for Group Rates
+                    </a>
+                    <div class="text-center text-gray-500 text-xs pt-2">Or call us during operating hours for instant group booking assistance.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 4. Safety Instructions -->
     <section class="py-24 bg-charcoal text-white relative overflow-hidden" id="safety">
         <div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
         <div class="max-w-5xl mx-auto px-4 text-center reveal">
-            <h2 class="text-4xl font-heading font-bold mb-12">Mandatory <span class="text-primary">Safety Instructions</span></h2>
+            <span class="text-primary font-bold tracking-wider uppercase text-sm mb-3 block">Your Safety First</span>
+            <h2 class="text-4xl font-heading font-bold mb-4">Mandatory <span class="text-primary">Safety Instructions</span></h2>
+            <p class="text-gray-300 max-w-2xl mx-auto text-lg mb-12">The safety of every rider is our absolute top priority. Please read and follow these instructions before participating in any attraction. Non-compliance may result in removal from the ride without refund.</p>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-primary hover:-translate-y-2 hover:shadow-2xl hover:shadow-primary/20 transition-all duration-300">
                     <i class="fa-solid fa-shirt text-4xl text-primary mb-6"></i>
                     <h4 class="font-bold text-xl mb-3">Proper Attire</h4>
-                    <p class="text-gray-400">Wear closed-toe shoes and comfortable activewear. No skirts or dresses.</p>
+                    <p class="text-gray-400">Wear closed-toe athletic shoes and comfortable, form-fitting activewear. Skirts, dresses, open-toed footwear, and loose-fitting clothing are strictly prohibited for rider safety.</p>
                 </div>
                 <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-purple hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple/20 transition-all duration-300">
                     <i class="fa-solid fa-hand-holding-medical text-4xl text-purple mb-6"></i>
                     <h4 class="font-bold text-xl mb-3">Health Notice</h4>
-                    <p class="text-gray-400">Not suitable for pregnant women or those with recent back/neck injuries.</p>
+                    <p class="text-gray-400">Our rides are not suitable for pregnant women, or individuals with recent back, neck, or joint injuries, heart conditions, or chronic medical conditions. If in doubt, please consult your doctor before participating.</p>
                 </div>
                 <div class="md:col-span-2 lg:col-span-1 flex justify-center">
                     <div class="p-8 bg-gray-800 rounded-3xl border border-gray-700 hover:border-cyan hover:-translate-y-2 hover:shadow-2xl hover:shadow-cyan/20 transition-all duration-300 w-full max-w-md lg:max-w-none">
                         <i class="fa-solid fa-file-signature text-4xl text-cyan mb-6"></i>
                         <h4 class="font-bold text-xl mb-3">Sign Waiver</h4>
-                        <p class="text-gray-400 text-center md:text-left lg:text-center">All participants must have a signed digital waiver before entering.</p>
+                        <p class="text-gray-400 text-center md:text-left lg:text-center">A signed digital waiver is mandatory for all participants without exception. Minors (under 18) must have their waiver signed by a parent or legal guardian. Waivers can be completed in advance online — we recommend doing this before arriving.</p>
                     </div>
                 </div>
             </div>
@@ -208,7 +910,7 @@
                         What is the weight limit?
                         <i class="fa-solid fa-chevron-down transition-transform" :class="active === 1 ? 'rotate-180' : ''"></i>
                     </button>
-                    <div x-show="active === 1" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900">
+                    <div x-show="active === 1" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
                         For the Bungee Trampoline, the weight limit is between 40 lbs and 220 lbs. For the SkyZip line, the maximum weight limit is 250 lbs.
                     </div>
                 </div>
@@ -218,11 +920,384 @@
                         Do I need to sign a waiver?
                         <i class="fa-solid fa-chevron-down transition-transform" :class="active === 2 ? 'rotate-180' : ''"></i>
                     </button>
-                    <div x-show="active === 2" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900">
+                    <div x-show="active === 2" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
                         Yes, all participants must have a signed waiver. Minors require a signature from a parent or legal guardian. You can sign this online before arriving.
                     </div>
                 </div>
+
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 3 ? null : 3" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        What happens if there is bad weather?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 3 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 3" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        Safety is our top priority. In the event of lightning, heavy rains, or wind speeds exceeding 25 MPH, we will temporarily suspend operations. We will offer you a full refund or rebook you to a slot of your choice.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 4 ? null : 4" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        Can spectators enter the park for free?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 4 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 4" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        Yes! Spectators are welcome to enter, watch, and take photos for free. We have designated spectator viewing areas adjacent to both the Bungee Trampolines and the SkyZip line launch zones.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 5 ? null : 5" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        Are there age restrictions for riders?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 5 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 5" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        For Bungee Trampoline, participants must be at least 5 years old. For SkyZip Line, the minimum age is 8 years old. All participants under 18 must have their online waiver signed by a parent or legal guardian.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 6 ? null : 6" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        What is your cancellation and refund policy?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 6 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 6" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        You can cancel or reschedule your slot up to 24 hours before your booking with no fees. Cancellations inside 24 hours are eligible for park credit but no cash refunds.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 7 ? null : 7" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        Do you offer corporate or birthday group packages?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 7 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 7" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        Yes, we do! We offer tailored birthday and corporate packages which include private park access, safety briefings, event tent rentals, and photography bundles. Check our pricing page or contact us for details.
+                    </div>
+                </div>
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 8 ? null : 8" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        Can I bring my own food and drinks?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 8 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 8" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        You're welcome to bring your own snacks and non-alcoholic beverages into the spectator zones. However, food and drinks are not permitted inside the active ride areas. We also have a small refreshment kiosk on-site for drinks and light snacks.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 9 ? null : 9" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        How long does a typical session last?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 9 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 9" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        A standard Bungee Trampoline session is 15 minutes of active ride time. Combo Pass holders get 20 minutes on the Bungee Trampoline plus access to the SkyZip Line. Including harnessing and the safety briefing, plan for roughly 30–40 minutes total per session.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 10 ? null : 10" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        Is the experience suitable for people with a fear of heights?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 10 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 10" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        Many of our guests are first-timers who are nervous about heights — and most of them say it was the best decision they made! Our instructors are trained to support anxious riders with calm encouragement, progressive steps, and clear guidance. The Bungee Trampoline in particular is a great starting point as it feels more like bouncing than true heights. Of course, participation is always voluntary.
+                    </div>
+                </div>
+
+                <div class="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden">
+                    <button @click="active = active === 11 ? null : 11" class="w-full p-6 text-left font-bold flex justify-between items-center dark:text-white bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+                        Is there parking available at the venue?
+                        <i class="fa-solid fa-chevron-down transition-transform" :class="active === 11 ? 'rotate-180' : ''"></i>
+                    </button>
+                    <div x-show="active === 11" class="p-6 text-gray-600 dark:text-gray-400 bg-white dark:bg-gray-900" x-cloak>
+                        Yes, we have ample free parking available on-site for guests. Disabled parking bays are available close to the main entrance. For large group bookings, please contact us in advance so we can ensure adequate space and smooth vehicle access.
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- ===== SPECIAL OFFERS & PACKAGES ===== -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-800 relative overflow-hidden" id="offers">
+        <div class="absolute top-0 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-80 h-80 bg-purple/5 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Limited Time Deals</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Special Offers &amp; <span class="text-gradient">Packages</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Save more when you bundle. Whether it's a solo adventure or a full group day out, we have a package built for you.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 reveal">
+                <!-- Offer 1: Solo Bungee -->
+                <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                    <div class="bg-gradient-to-br from-primary/10 to-cyan/10 p-8 text-center">
+                        <div class="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center text-2xl mb-4 mx-auto shadow-lg shadow-primary/30">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold dark:text-white mb-1">Bungee Solo</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">Perfect for individual thrill-seekers</p>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="text-center mb-6">
+                            <span class="text-5xl font-heading font-extrabold text-primary">$25</span>
+                            <span class="text-gray-400 text-sm block mt-1">per person &middot; 15 min session</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-grow">
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> 15-minute Bungee Trampoline session</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> Full safety harness &amp; instructor included</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> Digital waiver (complete online)</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> Spectator entry free</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-400"><i class="fa-solid fa-circle-xmark text-gray-300 dark:text-gray-600 w-4"></i> <span class="line-through">SkyZip Line not included</span></li>
+                        </ul>
+                        <a href="booking.html" class="block text-center bg-primary hover:bg-primary/80 text-white font-bold py-3.5 px-6 rounded-2xl transition shadow-lg shadow-primary/20">Book Bungee Solo</a>
+                    </div>
+                </div>
+
+                <!-- Offer 2: Combo Pass (POPULAR) -->
+                <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-2xl border-2 border-primary overflow-hidden flex flex-col relative hover:-translate-y-2 transition-all duration-300">
+                    <div class="absolute top-4 right-4 bg-primary text-white text-xs font-extrabold px-3 py-1.5 rounded-full uppercase tracking-wider shadow">Most Popular</div>
+                    <div class="bg-gradient-to-br from-primary to-purple p-8 text-center text-white">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center text-2xl mb-4 mx-auto">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold mb-1">Combo Pass</h3>
+                        <p class="text-white/80 text-sm">Bungee + SkyZip — the ultimate day out</p>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="text-center mb-6">
+                            <div class="flex items-center justify-center gap-3">
+                                <span class="text-gray-400 line-through text-xl">$55</span>
+                                <span class="text-5xl font-heading font-extrabold text-primary">$45</span>
+                            </div>
+                            <span class="text-gray-400 text-sm block mt-1">per person &middot; save $10</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-grow">
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> 20-minute Bungee Trampoline session</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> Full SkyZip Line ride included</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> Safety harness &amp; personal briefing</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> Digital waiver &amp; instant confirmation</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-primary w-4"></i> Priority check-in lane</li>
+                        </ul>
+                        <a href="booking.html" class="block text-center bg-gradient-to-r from-primary to-purple hover:from-purple hover:to-primary text-white font-bold py-3.5 px-6 rounded-2xl transition shadow-lg shadow-primary/30">Book Combo Pass</a>
+                    </div>
+                </div>
+
+                <!-- Offer 3: Group Package -->
+                <div class="bg-white dark:bg-gray-900 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700 overflow-hidden flex flex-col hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+                    <div class="bg-gradient-to-br from-purple/10 to-orange/10 p-8 text-center">
+                        <div class="w-14 h-14 bg-purple text-white rounded-2xl flex items-center justify-center text-2xl mb-4 mx-auto shadow-lg shadow-purple/30">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+                        <h3 class="text-2xl font-heading font-bold dark:text-white mb-1">Group Package</h3>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm">10+ participants &middot; best value</p>
+                    </div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="text-center mb-6">
+                            <span class="text-5xl font-heading font-extrabold text-purple">Custom</span>
+                            <span class="text-gray-400 text-sm block mt-1">pricing from $20/person</span>
+                        </div>
+                        <ul class="space-y-3 mb-8 flex-grow">
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-purple w-4"></i> Minimum 10 participants</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-purple w-4"></i> Dedicated event coordinator</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-purple w-4"></i> Optional: event tent &amp; catering</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-purple w-4"></i> Optional: event photography add-on</li>
+                            <li class="flex items-center gap-3 text-sm text-gray-600 dark:text-gray-400"><i class="fa-solid fa-circle-check text-purple w-4"></i> Flexible combo &amp; bungee-only options</li>
+                        </ul>
+                        <a href="contact.html" class="block text-center bg-purple hover:bg-purple/80 text-white font-bold py-3.5 px-6 rounded-2xl transition shadow-lg shadow-purple/20">Get a Group Quote</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seasonal Banner -->
+            <div class="mt-12 bg-gradient-to-r from-orange/10 to-primary/10 border border-orange/20 rounded-2xl p-6 flex flex-col md:flex-row items-center gap-4 reveal">
+                <div class="flex items-center gap-3 flex-shrink-0">
+                    <i class="fa-solid fa-fire text-orange text-3xl"></i>
+                    <span class="font-heading font-bold text-lg dark:text-white">Summer Family Deal:</span>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-sm flex-grow">Book 4 or more Combo Passes together and get <strong>15% off the total</strong>. Perfect for a family day out! Use code <strong class="text-primary">FAMILY15</strong> at checkout.</p>
+                <a href="booking.html" class="flex-shrink-0 bg-orange hover:bg-orange/80 text-white font-bold px-6 py-3 rounded-xl transition text-sm whitespace-nowrap">Claim Offer</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== HOW TO BOOK ===== -->
+    <section class="py-24 bg-white dark:bg-gray-900 relative" id="how-to-book">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Booking Is Simple</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">How to <span class="text-gradient">Book Your Ride</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-lg">Secure your slot in under 3 minutes — fully online, no phone calls needed. Instant confirmation sent straight to your inbox.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14 reveal">
+                <!-- Step 1 -->
+                <div class="relative bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 text-center border border-gray-100 dark:border-gray-700 hover:border-primary/30 hover:shadow-xl transition-all duration-300">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-heading font-extrabold text-lg shadow-lg shadow-primary/30">1</div>
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary text-3xl mb-5 mx-auto mt-4">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 dark:text-white">Choose Your Experience</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Visit our booking page, pick your experience (Bungee Solo or Combo Pass), select your preferred date, time slot, and number of participants.</p>
+                    <div class="mt-4 text-xs text-primary font-semibold">Takes ~1 minute</div>
+                </div>
+                <!-- Step 2 -->
+                <div class="relative bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 text-center border border-gray-100 dark:border-gray-700 hover:border-cyan/30 hover:shadow-xl transition-all duration-300">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-cyan text-white rounded-full flex items-center justify-center font-heading font-extrabold text-lg shadow-lg shadow-cyan/30">2</div>
+                    <div class="w-16 h-16 bg-cyan/10 rounded-2xl flex items-center justify-center text-cyan text-3xl mb-5 mx-auto mt-4">
+                        <i class="fa-solid fa-file-pen"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 dark:text-white">Sign Your Waiver</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Complete your mandatory digital safety waiver online as part of the checkout process. Minors need a parent or guardian to sign on their behalf — takes seconds.</p>
+                    <div class="mt-4 text-xs text-cyan font-semibold">Takes ~1 minute</div>
+                </div>
+                <!-- Step 3 -->
+                <div class="relative bg-gray-50 dark:bg-gray-800 rounded-3xl p-8 text-center border border-gray-100 dark:border-gray-700 hover:border-purple/30 hover:shadow-xl transition-all duration-300">
+                    <div class="absolute -top-5 left-1/2 -translate-x-1/2 w-10 h-10 bg-purple text-white rounded-full flex items-center justify-center font-heading font-extrabold text-lg shadow-lg shadow-purple/30">3</div>
+                    <div class="w-16 h-16 bg-purple/10 rounded-2xl flex items-center justify-center text-purple text-3xl mb-5 mx-auto mt-4">
+                        <i class="fa-solid fa-credit-card"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3 dark:text-white">Pay &amp; Get Confirmed</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Pay securely online via card or digital wallet. Your booking confirmation and QR code ticket arrive instantly by email — just show it at the gate on arrival day.</p>
+                    <div class="mt-4 text-xs text-purple font-semibold">Instant confirmation</div>
+                </div>
+            </div>
+
+            <!-- CTA under steps -->
+            <div class="text-center reveal">
+                <p class="text-gray-500 dark:text-gray-400 mb-6 text-sm">Slots fill fast, especially on weekends. We recommend booking at least 48 hours in advance.</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="booking.html" class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-purple hover:from-purple hover:to-primary text-white font-bold px-10 py-4 rounded-full transition shadow-xl shadow-primary/30 text-lg btn-glow">
+                        <i class="fa-solid fa-ticket"></i> Book Your Slot Now
+                    </a>
+                    <a href="pricing.html" class="inline-flex items-center gap-2 border-2 border-primary text-primary hover:bg-primary hover:text-white font-bold px-10 py-4 rounded-full transition text-lg">
+                        <i class="fa-solid fa-tags"></i> View Full Pricing
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FIND US / LOCATION ===== -->
+    <section class="py-24 bg-gray-50 dark:bg-charcoal relative overflow-hidden" id="location">
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 reveal">
+                <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Getting Here</span>
+                <h2 class="text-4xl md:text-5xl font-heading font-bold mb-4 dark:text-white">Find <span class="text-gradient">Our Park</span></h2>
+                <p class="text-gray-600 dark:text-gray-400 max-w-xl mx-auto text-lg">We're easy to reach by car, bus, or on foot. Come visit us — parking is free and plentiful!</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start reveal">
+                <!-- Location Info Cards -->
+                <div class="space-y-5">
+                    <!-- Address -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex items-start gap-5 shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-all duration-300">
+                        <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary text-xl flex-shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold dark:text-white mb-1">Our Address</h4>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">SkyZip &amp; Bungee Trampoline Attractions<br>Adventure Park Drive, Thrillville<br>TX 75001, United States</p>
+                            <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1 text-primary text-sm font-semibold mt-2 hover:underline"><i class="fa-solid fa-map"></i> Open in Google Maps</a>
+                        </div>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex items-start gap-5 shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-all duration-300">
+                        <div class="w-12 h-12 bg-cyan/10 rounded-xl flex items-center justify-center text-cyan text-xl flex-shrink-0">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div class="w-full">
+                            <h4 class="font-heading font-bold dark:text-white mb-3">Opening Hours</h4>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between"><span class="text-gray-500 dark:text-gray-400">Monday &ndash; Friday</span><span class="font-bold text-primary">10:00 AM &ndash; 8:00 PM</span></div>
+                                <div class="flex justify-between"><span class="text-gray-500 dark:text-gray-400">Saturday &ndash; Sunday</span><span class="font-bold text-primary">9:00 AM &ndash; 10:00 PM</span></div>
+                                <div class="flex justify-between"><span class="text-gray-500 dark:text-gray-400">Public Holidays</span><span class="font-bold text-purple">9:00 AM &ndash; 8:00 PM</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transport -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex items-start gap-5 shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-all duration-300">
+                        <div class="w-12 h-12 bg-purple/10 rounded-xl flex items-center justify-center text-purple text-xl flex-shrink-0">
+                            <i class="fa-solid fa-bus"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold dark:text-white mb-2">Getting Here</h4>
+                            <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-car text-primary mt-0.5 w-4"></i><span><strong>By Car:</strong> Free on-site parking available. Disabled bays near the main entrance.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-bus text-cyan mt-0.5 w-4"></i><span><strong>By Bus:</strong> Routes 14 &amp; 27 stop directly outside the park entrance.</span></li>
+                                <li class="flex items-start gap-2"><i class="fa-solid fa-train text-purple mt-0.5 w-4"></i><span><strong>By Rail:</strong> Thrillville Station is a 10-minute walk. Taxis also available at the station.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl p-6 flex items-start gap-5 shadow-md border border-gray-100 dark:border-gray-700 hover:border-primary/30 transition-all duration-300">
+                        <div class="w-12 h-12 bg-orange/10 rounded-xl flex items-center justify-center text-orange text-xl flex-shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-heading font-bold dark:text-white mb-2">Contact Us Directly</h4>
+                            <div class="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-phone text-orange w-4"></i><a href="tel:+15551234567" class="hover:text-primary transition">+1 (555) 123-4567</a></div>
+                                <div class="flex items-center gap-2"><i class="fa-solid fa-envelope text-primary w-4"></i><a href="mailto:hello@skyzip.com" class="hover:text-primary transition">hello@skyzip.com</a></div>
+                                <div class="flex items-center gap-2"><i class="fa-brands fa-whatsapp text-green-500 w-4"></i><a href="https://wa.me/15551234567" target="_blank" class="hover:text-primary transition">WhatsApp Us</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Embed -->
+                <div class="rounded-3xl overflow-hidden shadow-2xl border border-gray-100 dark:border-gray-700 relative" style="min-height: 500px;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509371!2d-122.4194156846819!3d37.77492997975964!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c6c8f4459%3A0xb10ed6d9b5050fa5!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2sus!4v1685000000000"
+                        width="100%"
+                        height="500"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        title="SkyZip Park Location Map">
+                    </iframe>
+                    <div class="absolute top-4 left-4 bg-white dark:bg-gray-900 shadow-lg rounded-xl px-4 py-2 flex items-center gap-2 text-sm font-bold dark:text-white">
+                        <i class="fa-solid fa-location-dot text-primary"></i> SkyZip &amp; Bungee Park
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FINAL CTA BANNER ===== -->
+    <section class="py-24 relative overflow-hidden bg-gradient-to-br from-charcoal via-gray-900 to-gray-950 text-white">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('assets/img/services-hero.png'); background-size: cover; background-position: center;"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/20 to-purple/20"></div>
+        <div class="absolute top-10 left-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-10 right-10 w-64 h-64 bg-purple/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 reveal">
+            <span class="inline-flex items-center gap-2 bg-primary/20 border border-primary/30 text-primary px-4 py-1.5 rounded-full text-sm font-bold uppercase tracking-wider mb-6">
+                <i class="fa-solid fa-fire-flame-curved"></i> Slots Filling Fast
+            </span>
+            <h2 class="text-5xl md:text-6xl font-heading font-extrabold mb-6 leading-tight">
+                Ready to <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple">Defy Gravity?</span>
+            </h2>
+            <p class="text-xl text-gray-300 mb-4 max-w-2xl mx-auto">Don't let the thrill wait. Book your Bungee Trampoline or SkyZip Line session today and give yourself — or someone you love — an adventure they'll never forget.</p>
+            <p class="text-gray-400 text-sm mb-10">&#10003; Instant confirmation &nbsp;&nbsp; &#10003; Free cancellation 24hrs before &nbsp;&nbsp; &#10003; Digital waiver included</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="booking.html" class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-purple hover:from-purple hover:to-primary text-white font-bold px-12 py-5 rounded-full text-xl transition shadow-2xl shadow-primary/40 btn-glow group">
+                    <i class="fa-solid fa-ticket group-hover:scale-110 transition-transform"></i>
+                    Book Now &mdash; It's Easy!
+                </a>
+                <a href="contact.html" class="inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 text-white font-bold px-10 py-5 rounded-full text-xl transition">
+                    <i class="fa-solid fa-headset"></i>
+                    Ask a Question
+                </a>
+            </div>
+
+            <p class="mt-8 text-gray-500 text-sm">Questions? Call us at <a href="tel:+15551234567" class="text-primary hover:underline font-semibold">+1 (555) 123-4567</a> during operating hours.</p>
         </div>
     </section>
 

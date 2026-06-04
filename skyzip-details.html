@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | SkyZip & Bungee Trampoline</title>
+    <title>SkyZip Line Experience | SkyZip & Bungee Trampoline</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,11 +11,11 @@
         tailwind.config = { darkMode: 'class', theme: { extend: { colors: { primary: '#0ea5e9', purple: '#a855f7', charcoal: '#1f2937' }, fontFamily: { sans: ['Inter'], heading: ['Poppins'] } } } }
     </script>
     <link rel="stylesheet" href="assets/css/style.css">
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body class="font-sans antialiased text-gray-900 bg-gray-50 dark:bg-gray-900 dark:text-gray-100 pt-24">
 
-    <!-- Navbar -->
+    <!-- Navbar Area -->
     <nav id="navbar" x-data="{ mobileMenuOpen: false }" class="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md transition-all duration-300 text-gray-900 dark:text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
@@ -32,7 +32,7 @@
                         <button class="hover:text-primary transition font-semibold font-sora flex items-center gap-1">
                             Home <i class="fa-solid fa-chevron-down text-[10px] transition-transform duration-300" :class="open ? 'rotate-180' : ''"></i>
                         </button>
-                         <div x-show="open" 
+                         <div x-show="open" x-cloak
                               x-transition:enter="transition ease-out duration-200"
                               x-transition:enter-start="opacity-0 translate-y-2"
                               x-transition:enter-end="opacity-100 translate-y-0"
@@ -46,7 +46,7 @@
                     <a href="about.html" class="hover:text-primary transition font-semibold font-sora">About</a>
                     <a href="services.html" class="hover:text-primary transition font-semibold font-sora">Experiences</a>
                     <a href="pricing.html" class="hover:text-primary transition font-semibold font-sora">Pricing</a>
-                    <a href="contact.html" class="text-primary transition font-semibold font-sora">Contact</a>
+                    <a href="contact.html" class="hover:text-primary transition font-semibold font-sora">Contact</a>
                     
                     <button class="rtl-toggle hover:text-primary transition flex items-center">
                         <span class="text-xs font-bold">RTL</span>
@@ -93,102 +93,159 @@
                 <a href="about.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50 text-center">About</a>
                 <a href="services.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50 text-center">Experiences</a>
                 <a href="pricing.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium border-b border-gray-700/50 text-center">Pricing</a>
-                <a href="contact.html" class="text-primary block px-3 py-3 rounded-md font-medium text-center">Contact</a>
+                <a href="contact.html" class="text-white hover:text-primary block px-3 py-3 rounded-md font-medium text-center">Contact</a>
                 <a href="booking.html" class="bg-gradient-to-r from-primary to-purple text-white block px-3 py-3 mt-4 rounded-full font-bold text-center shadow-lg mx-auto w-full max-w-xs">Book Now</a>
             </div>
         </div>
     </nav>
 
-    <!-- 1. Contact Hero -->
-    <section class="py-24 bg-gradient-to-r from-gray-900 to-charcoal text-white text-center">
-        <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-5xl md:text-6xl font-heading font-extrabold mb-6">Get in <span class="text-primary">Touch</span></h1>
-            <p class="text-xl text-gray-400">Have questions? Ready to book a large event? We're here to help.</p>
-        </div>
-    </section>
-
-    <!-- 2. Contact Form & 4. Business Information -->
+    <!-- 1. Attraction Overview -->
     <section class="py-20 bg-white dark:bg-gray-900">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-3 gap-12">
-                
-                <!-- Business Information -->
-                <div class="lg:col-span-1 space-y-8">
-                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 text-center flex flex-col items-center">
-                        <div class="w-14 h-14 bg-primary/10 text-primary rounded-full flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-location-dot"></i>
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div class="rounded-3xl overflow-hidden shadow-2xl relative group">
+                    <img src="assets/img/skyzip-line.png" alt="SkyZip Line" class="w-full h-[450px] object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute top-4 left-4 bg-purple text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">High Speed</div>
+                </div>
+                <div>
+                    <span class="text-purple font-bold uppercase tracking-wider mb-2 block">Attraction Highlights</span>
+                    <h1 class="text-4xl md:text-5xl font-heading font-bold mb-6 dark:text-white">SkyZip Line</h1>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg mb-6 leading-relaxed">
+                        Prepare to fly across the park with our state-of-the-art SkyZip Line system! This attraction is designed to give you a true bird's-eye view, launching from a 40-foot custom steel tower and zipping across a 500-foot-long high-tensile cable at speeds reaching up to 35 MPH.
+                    </p>
+                    <p class="text-gray-600 dark:text-gray-400 text-lg mb-6 leading-relaxed">
+                        Engineered with the industry-leading zipStop eddy current magnetic braking system, riders experience a smooth, automated decelerating slowdown with no manual braking needed. It is a premium, safe, and breathtaking experience suitable for adults and children alike.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-8">
+                        <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                            <i class="fa-solid fa-check-circle text-purple text-lg"></i>
+                            <span>500-foot gliding run</span>
                         </div>
-                        <h4 class="text-xl font-bold dark:text-white mb-2">Our Location</h4>
-                        <p class="text-gray-600 dark:text-gray-400">123 Adventure Park Way<br>Cityville, ST 12345</p>
-                    </div>
-                    
-                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 text-center flex flex-col items-center">
-                        <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-full flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-phone"></i>
+                        <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                            <i class="fa-solid fa-check-circle text-purple text-lg"></i>
+                            <span>Magnetic auto-brake technology</span>
                         </div>
-                        <h4 class="text-xl font-bold dark:text-white mb-2">Contact Info</h4>
-                        <p class="text-gray-600 dark:text-gray-400">Phone: +1 (555) 123-4567<br>Email: hello@skyzip.com</p>
-                    </div>
-                    
-                    <div class="bg-gray-50 dark:bg-gray-800 p-8 rounded-3xl border border-gray-100 dark:border-gray-700 text-center flex flex-col items-center">
-                        <div class="w-14 h-14 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center text-2xl mb-6">
-                            <i class="fa-solid fa-clock"></i>
+                        <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                            <i class="fa-solid fa-check-circle text-purple text-lg"></i>
+                            <span>Panoramas of the entire park</span>
                         </div>
-                        <h4 class="text-xl font-bold dark:text-white mb-2">Opening Hours</h4>
-                        <p class="text-gray-600 dark:text-gray-400">Mon - Fri: 10:00 AM - 8:00 PM<br>Sat - Sun: 9:00 AM - 10:00 PM</p>
+                        <div class="flex items-center gap-3 text-gray-700 dark:text-gray-300">
+                            <i class="fa-solid fa-check-circle text-purple text-lg"></i>
+                            <span>Dual safety cable anchors</span>
+                        </div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Contact Form -->
-                <div class="lg:col-span-2">
-                    <div class="bg-white dark:bg-gray-800 p-10 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-700">
-                        <h3 class="text-3xl font-heading font-bold mb-8 dark:text-white">Send Us a Message</h3>
-                        <form>
-                            <div class="grid md:grid-cols-2 gap-6 mb-6">
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Full Name</label>
-                                    <input type="text" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary dark:text-white" placeholder="John Doe">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Email Address</label>
-                                    <input type="email" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary dark:text-white" placeholder="john@example.com">
-                                </div>
+            <!-- Technical Specifications and Walkthrough -->
+            <div class="grid md:grid-cols-2 gap-12 mt-16 border-t border-gray-100 dark:border-gray-800 pt-16">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 dark:text-white font-heading">Technical Specifications</h3>
+                    <div class="overflow-hidden rounded-2xl border border-gray-100 dark:border-gray-800 shadow-md">
+                        <table class="w-full border-collapse bg-white dark:bg-gray-900 text-left text-sm text-gray-500 dark:text-gray-400">
+                            <tbody class="divide-y divide-gray-100 dark:divide-gray-800">
+                                <tr>
+                                    <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">Cable Length</td>
+                                    <td class="px-6 py-4">500 Feet (approx. 152 Meters)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">Launch Height</td>
+                                    <td class="px-6 py-4">40 Feet (approx. 12 Meters) high tower</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">Top Velocity</td>
+                                    <td class="px-6 py-4">Up to 35 MPH (56 Km/h)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">Brake Mechanism</td>
+                                    <td class="px-6 py-4">zipStop magnetic eddy-current auto-retracting brakes</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-6 py-4 font-bold text-gray-900 dark:text-white">Weight Range</td>
+                                    <td class="px-6 py-4">Min: 60 lbs / Max: 250 lbs (27 kg to 113 kg)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 dark:text-white font-heading">The Flight Process</h3>
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple text-white flex items-center justify-center font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Gear & Harness Check</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Our certified instructors fit you with an impact-rated helmet, heavy-duty gloves, and a full-body overhead safety harness.</p>
                             </div>
-                            <div class="mb-6">
-                                <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Subject</label>
-                                <select class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary dark:text-white">
-                                    <option>General Inquiry</option>
-                                    <option>Group Booking / Birthday</option>
-                                    <option>Feedback</option>
-                                </select>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple text-white flex items-center justify-center font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Tower Launch</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Ascend the launch platform tower. An instructor clips your trolley to the primary steel line, locks the safety backup, and clears you for flight.</p>
                             </div>
-                            <div class="mb-8">
-                                <label class="block text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">Message</label>
-                                <textarea rows="5" class="w-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary dark:text-white" placeholder="How can we help you?"></textarea>
-                            </div>
-                            <button type="submit" class="bg-primary text-white px-8 py-4 rounded-xl font-bold w-full hover:bg-cyan transition shadow-lg shadow-primary/30">Send Message</button>
-                        </form>
-                        
-                        <!-- Social Media Follow -->
-                        <div class="mt-10 pt-8 border-t border-gray-100 dark:border-gray-700 text-center">
-                            <p class="text-sm font-bold text-gray-500 dark:text-gray-400 uppercase tracking-widest mb-6">Or Follow Us On</p>
-                            <div class="flex justify-center gap-6">
-                                <a href="#" class="social-icon-glow facebook w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-xl text-gray-700 dark:text-gray-300 shadow-md"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon-glow instagram w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-xl text-gray-700 dark:text-gray-300 shadow-md"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="social-icon-glow tiktok w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-xl text-gray-700 dark:text-gray-300 shadow-md"><i class="fa-brands fa-tiktok"></i></a>
-                                <a href="#" class="social-icon-glow youtube w-12 h-12 rounded-full bg-gray-50 dark:bg-gray-900 flex items-center justify-center text-xl text-gray-700 dark:text-gray-300 shadow-md"><i class="fa-brands fa-youtube"></i></a>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-purple text-white flex items-center justify-center font-bold">3</div>
+                            <div>
+                                <h4 class="font-bold text-gray-900 dark:text-white">Automatic Deceleration</h4>
+                                <p class="text-gray-600 dark:text-gray-400 text-sm mt-1">Glide at exhilarating speeds across the tree line. As you approach the landing dock, the magnetic brakes engage automatically for a smooth, gentle stop.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     </section>
 
-    <!-- 3. Google Map -->
-    <section class="h-96 w-full bg-gray-200 relative">
-        <iframe class="absolute inset-0 w-full h-full" style="border:0;" loading="lazy" allowfullscreen src="https://maps.google.com/maps?q=Central%20Park,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    <!-- 2. Booking & Pricing Table -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-white dark:bg-gray-900 rounded-3xl p-8 shadow-xl">
+                <h2 class="text-3xl font-heading font-bold mb-8 dark:text-white border-b border-gray-100 dark:border-gray-800 pb-4">Available Packages</h2>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl hover:border-purple/50 border border-transparent transition">
+                        <div>
+                            <h4 class="font-bold text-xl dark:text-white">Single Ride Pass</h4>
+                            <p class="text-gray-500">1 Full SkyZip ride across the park</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-purple">$30</div>
+                            <a href="booking.html" class="text-sm font-bold underline hover:text-gray-900 dark:hover:text-white transition">Book Slot</a>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center p-6 bg-primary/10 rounded-2xl border border-primary/30">
+                        <div>
+                            <h4 class="font-bold text-xl dark:text-white">Combo Day Pass <span class="bg-primary text-white text-xs px-2 py-1 rounded ml-2">Best Value</span></h4>
+                            <p class="text-gray-500">20 Mins Bungee + 1 SkyZip Ride + Priority Queue</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-2xl font-bold text-primary">$45</div>
+                            <a href="booking.html" class="bg-primary hover:bg-primary/80 text-white text-sm font-bold px-6 py-2.5 rounded-full mt-2 inline-block transition">Book Slot</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Attraction Reviews -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-5xl mx-auto px-4">
+            <h2 class="text-3xl font-heading font-bold mb-10 text-center dark:text-white">Recent Rider Reviews</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"The view from the tower is gorgeous! Sliding down at 35mph was thrilling, and the magnetic brake at the end made the stop surprisingly smooth. A must-do!"</p>
+                    <h5 class="font-bold dark:text-white">- James D. <span class="text-xs font-normal text-gray-400 ml-2">Verified Rider</span></h5>
+                </div>
+                <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl">
+                    <div class="text-yellow-400 mb-2"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-4">"Absolutely brilliant. The staff on the launch tower were very meticulous checking my gear twice. Felt completely safe, and the rush of wind was incredible."</p>
+                    <h5 class="font-bold dark:text-white">- Claire T. <span class="text-xs font-normal text-gray-400 ml-2">Verified Rider</span></h5>
+                </div>
+            </div>
+        </div>
     </section>
 
     <footer class="bg-charcoal text-white pt-12 pb-8 border-t border-gray-800">
@@ -252,12 +309,6 @@
         </div>
     </footer>
 
-    
-
-    
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
