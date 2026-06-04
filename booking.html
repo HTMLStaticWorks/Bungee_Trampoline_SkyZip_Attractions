@@ -116,13 +116,20 @@
     </nav>
 
     <!-- 1. Hero Section -->
-    <section class="relative py-20 overflow-hidden">
+    <section class="relative pt-8 pb-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="assets/img/booking-hero.png" alt="Booking Hero" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/60 to-gray-50 dark:to-gray-900"></div>
         </div>
         
         <div class="relative z-10 max-w-7xl mx-auto px-4 text-center reveal">
+            <!-- Back Button -->
+            <div class="flex justify-start mb-8">
+                <button onclick="history.back()" class="group inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white border border-white/20 hover:border-white/40 px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 shadow-lg hover:shadow-white/10 hover:-translate-x-1">
+                    <i class="fa-solid fa-arrow-left transition-transform duration-300 group-hover:-translate-x-1"></i>
+                    Back to Previous Page
+                </button>
+            </div>
             <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white mb-4 tracking-tight">
                 Secure Your <span class="text-gradient">Adventure</span>
             </h1>
