@@ -9,9 +9,9 @@
                     </a>
                     <p class="text-gray-400 mb-6">Premium adrenaline experiences for all ages. Defy gravity safely with our state-of-the-art Bungee Trampolines and SkyZip lines.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="w-10 h-10 social-icon-glow facebook rounded-full bg-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 social-icon-glow instagram rounded-full bg-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 social-icon-glow tiktok rounded-full bg-gray-800 flex items-center justify-center transition"><i class="fa-brands fa-tiktok"></i></a>
                     </div>
                 </div>
                 
